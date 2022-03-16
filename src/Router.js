@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Router, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // 두현
 import MainDuHyeon from './pages/duhyeon/Main/Main';
 import LoginDuHyeon from './pages/duhyeon/Login/Login';
