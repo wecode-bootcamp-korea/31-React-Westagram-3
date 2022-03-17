@@ -1,1 +1,107 @@
 @charset "utf-8";
+.main-right {
+  width: calc(100% - 600px);
+  margin-left: 30px;
+  .profile-section {
+    display: flex;
+    align-items: center;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+    }
+    dl {
+      margin-left: 15px;
+      dt {
+        font-weight: bold;
+      }
+      dd {
+        color: #8e8e8e;
+      }
+    }
+  }
+  .more-title-wrap {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    margin-bottom: 5px;
+    .title {
+      color: #9e9e9e;
+    }
+    .btn-story-more {
+      font-weight: 500;
+    }
+  }
+  .story-section {
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+
+    .story-wrap {
+      height: 130px;
+      overflow-y: auto;
+      .story-list {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 40px;
+        }
+        dl {
+          margin-left: 12px;
+          dt {
+            font-weight: bold;
+          }
+          dd {
+            color: #8e8e8e;
+          }
+        }
+      }
+    }
+  }
+
+  .recommend-section {
+    margin-top: 15px;
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+    padding: 10px 15px 15px;
+    .recommend-list {
+      position: relative;
+      display: flex;
+      align-items: center;
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+      }
+      dl {
+        margin-left: 10px;
+        dt {
+          font-weight: bold;
+        }
+        dd {
+          width: calc(100% - 50px);
+          color: #8e8e8e;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+      .btn-follow {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        color: #0095f6;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
