@@ -59,7 +59,7 @@ const Nav = () => {
             <li className="modal-logout">로그아웃</li>
           </ul>
         </div>
-        <div className="overlay"></div>
+        <div className="overlay" />
       </div>
     </nav>
   );

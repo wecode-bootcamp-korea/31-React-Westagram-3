@@ -1,0 +1,41 @@
+@import '../../../../styles/common.scss';
+
+.loginForm {
+  @include flexBetween;
+
+  .username,
+  .pwd {
+    width: 200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: lightyellow;
+    border: 1px solid green;
+  }
+
+  .loginBtn {
+    width: 200px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: skyblue;
+  }
+
+  .btnActivate {
+    width: 200px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: blue;
+  }
+}
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}

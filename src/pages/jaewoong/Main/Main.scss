@@ -1,1 +1,156 @@
 @charset "utf-8";
+
+@import '../../../styles/common.scss';
+
+#mainPage {
+  position: relative;
+  display: flex;
+  background-color: wheat;
+
+  .section {
+    margin: 100px 0 0 100px;
+
+    .postContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 10px;
+      background-color: white;
+      border: 1px solid lightgray;
+
+      .postTopbar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .followeeId {
+          width: 500px;
+        }
+        .tridotBtn {
+          width: 20px;
+          height: 20px;
+          margin: 10px;
+        }
+      }
+      .photo {
+        width: 600px;
+        height: 600px;
+      }
+      .postInteractionParts {
+        padding: 20px;
+
+        .postIconBar {
+          display: flex;
+          justify-content: space-between;
+
+          .postIcon {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .postMaintext {
+          margin: 10px 0;
+        }
+        .replyContents {
+          display: flex;
+          justify-content: space-between;
+
+          .replyIcon {
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+          }
+          .replyText {
+            margin-left: 3px;
+          }
+        }
+      }
+      .replyComponent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .insertReply {
+          width: 90%;
+          height: 40px;
+          border: 1px solid lightgray;
+          border-radius: 5%;
+        }
+
+        .submitReply {
+          width: 9%;
+          height: 40px;
+          border: none;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+@mixin flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexRowCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumnSpaceAround {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@mixin LoginBtnFrame {
+  width: 200px;
+  height: 30px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.smallBoldFont {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.smallGrayFont {
+  color: gray;
+  font-size: smaller;
+}
+
+.doubleLineContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.middleThumbnail {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 90px;
+}
+
+.smallFolloweeThumbnail {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 0 0;
+  border-radius: 90px;
+}
