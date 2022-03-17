@@ -1,1 +1,293 @@
 @charset "utf-8";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+  /* 메인 페이지  */
+  .page {
+    background-color: #fafafa;
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 100vw;
+    height: 1000px;
+    // .main {
+    //   background-color: #fafafa;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   height: 100%;
+    //   border-top: 1px solid lightgray;
+    // }
+
+    .feeds {
+      background-color: white;
+      margin-top: 100px;
+      /* 피드 화면  */
+      .article {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        width: 600px;
+
+        /* 피드 헤더 */
+        .articleTop {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px 20px;
+
+          .articleTopLeft {
+            display: flex;
+            font-size: 20px;
+            .articleTopLeftImg img {
+              width: 40px;
+              border-radius: 50px;
+              margin-right: 10px;
+            }
+
+            .articleTopLeftText {
+              margin-top: 5px;
+              margin-left: 3px;
+            }
+          }
+          .articleTopRight {
+            font-size: 15px;
+            padding: 10px;
+          }
+        }
+
+        /* 피드 사진 */
+        .articleMiddle img {
+          max-width: 100%;
+        }
+
+        /* 피드 하단 댓글 */
+        .articleBottom {
+          display: flex;
+          flex-direction: column;
+          .articleBottomTop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 6px 15px;
+            font-size: 20px;
+
+            .articleBottomTopLeft {
+              display: flex;
+              .redHeart {
+                color: red;
+              }
+            }
+
+            .articleBottomTopLeft i {
+              margin-left: 8px;
+            }
+          }
+
+          .articleBottomMiddle {
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+
+            .articleBottomMiddleLike img {
+              width: 20px;
+              border-radius: 45px;
+            }
+          }
+
+          .articleBottomMiddleComment {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 5px;
+            padding: 10px;
+            /* height: 100px; */
+            .articleBottomMiddleCommentBox {
+              display: flex;
+              justify-content: space-between;
+              width: 570px;
+              height: 7px;
+              margin-bottom: 12px;
+            }
+
+            .articleBottomMiddleCommentText {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              width: 550px;
+            }
+            .textImg {
+              width: 12px;
+            }
+          }
+
+          .articleBottomBottom {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid lightgray;
+            padding: 10px 10px;
+            height: 60px;
+
+            .articleBottomBottomComment {
+              border: none;
+              background-color: white;
+              margin-left: 10px;
+              width: 500px;
+              outline: none;
+            }
+
+            .articleBottomBottomCommentBtn {
+              border: none;
+              padding: 10px;
+              background-color: white;
+              color: lightsteelblue;
+              width: 70px;
+              outline: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    // 메인 우측
+    // .mainRight {
+    //   display: flex;
+    //   flex-direction: column;
+    //   max-width: 300px;
+    //   margin-left: 50px;
+    //   margin-top: 100px;
+
+    //   .mainRightTop {
+    //     display: flex;
+    //     flex-direction: row;
+    //     padding: 10px;
+
+    //     .mainRightTopProfile {
+    //       display: flex;
+    //       flex-direction: column;
+    //       justify-content: center;
+    //       margin-left: 10px;
+    //     }
+
+    //     .mainRightTopId {
+    //       font-size: 20px;
+    //     }
+
+    //     .mainRightTopName {
+    //       font-size: 15px;
+    //       color: gray;
+    //     }
+
+    //     .mainRightTopImg {
+    //       width: 65px;
+    //       border-radius: 45px;
+    //       padding: 5px;
+    //     }
+    //   }
+
+    //   .mainRightMiddle {
+    //     display: flex;
+    //     flex-direction: column;
+    //     border: 1px solid lightgray;
+    //     height: 250px;
+    //   }
+
+    //   .maineRightMiddleHeader {
+    //     display: flex;
+    //     flex-direction: row;
+    //     justify-content: space-between;
+    //     padding: 15px;
+    //   }
+
+    //   .mainRightMiddleList {
+    //     height: 250px;
+    //     overflow: scroll;
+    //     flex-direction: column;
+    //   }
+
+    //   .mainRightMiddleListProfileId {
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-left: 10px;
+    //   }
+
+    //   li img {
+    //     width: 28px;
+    //     height: 28px;
+    //     border-radius: 45px;
+    //   }
+
+    //   li {
+    //     display: flex;
+    //     max-width: 100%;
+    //     max-height: 100%;
+    //     padding: 10px;
+    //     margin-left: 10px;
+    //   }
+
+    //   .mainRightBottom {
+    //     display: flex;
+    //     flex-direction: column;
+    //     border: 1px solid lightgray;
+    //     margin-top: 20px;
+    //   }
+
+    //   .mainRightBottomHeader {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     padding: 15px;
+    //   }
+
+    //   .mainRightBottomListProfile {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-content: space-between;
+    //     width: 400px;
+    //   }
+
+    //   .mainRightBottomListProfileId {
+    //     display: flex;
+    //     flex-direction: column;
+    //     /* align-items: center; */
+    //     justify-content: center;
+    //     font-size: 13px;
+    //     padding: 1px;
+    //     margin-left: 5px;
+    //   }
+
+    //   .mainRightBottomListProfileFollow {
+    //     color: lightskyblue;
+    //     margin-left: 10px;
+    //   }
+
+    //   .mainRightUnder {
+    //     color: lightgray;
+    //     margin-top: 25px;
+    //     font-size: 16px;
+    //   }
+
+    //   .mainRightUnderText2 {
+    //     margin-top: 25px;
+    //   }
+
+    //   ul {
+    //     list-style: none;
+    //   }
+  }
+}
+
+/* 메인 화면  */
+
+/* 피드 목록 */
+/* 메인 우측  */
