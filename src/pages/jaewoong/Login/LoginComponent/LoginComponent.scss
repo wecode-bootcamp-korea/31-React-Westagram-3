@@ -1,22 +1,23 @@
 @import '../../../../styles/common.scss';
 
 .loginForm {
-  @include flexBetween;
-
+  padding: 10px;
+  display: grid;
   .username,
   .pwd {
     width: 200px;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
     background-color: lightyellow;
     border: 1px solid green;
   }
 
   .loginBtn {
     width: 200px;
-    height: 30px;
+    margin-bottom: 5px;
+    padding: 5px;
     color: white;
-    border: none;
+    border: 0;
     border-radius: 5px;
     cursor: pointer;
     background-color: skyblue;
@@ -24,18 +25,12 @@
 
   .btnActivate {
     width: 200px;
-    height: 30px;
+    margin-bottom: 5px;
+    padding: 5px;
     color: white;
-    border: none;
+    border: 0;
     border-radius: 5px;
     cursor: pointer;
     background-color: blue;
   }
-}
-.invisible {
-  visibility: hidden;
-}
-
-.hidden {
-  display: none;
 }

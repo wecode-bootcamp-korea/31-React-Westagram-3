@@ -8,7 +8,7 @@ const Login = () => {
       <main className="loginContainer">
         <h1 className="loginTitle">westagram</h1>
         <LoginComponent />
-        <a href="" className="forgetPwd">
+        <a href="" className="forgetPwd gray">
           비밀번호를 잊으셨나요?
         </a>
       </main>

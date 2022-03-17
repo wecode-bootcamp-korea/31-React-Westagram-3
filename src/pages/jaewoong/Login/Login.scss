@@ -9,28 +9,20 @@
   background-color: rgb(246, 252, 230);
 
   .loginContainer {
-    @include flexCenter;
+    display: grid;
+    place-items: center;
     padding: 40px 40px;
     background-color: white;
     border: 1px solid yellow;
 
     h1 {
       font-family: 'Lobster', cursive;
-      margin: 15px 0;
     }
 
     .forgetPwd {
-      margin: 50px 0 0 5px;
-      font-size: x-small;
-      text-decoration: none;
+      margin-top: 30px;
+      font-size: 10px;
+      text-decoration: 0;
     }
   }
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.hidden {
-  display: none;
 }

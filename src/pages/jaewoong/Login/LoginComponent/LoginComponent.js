@@ -35,13 +35,13 @@ function LoginComponent() {
         minLength="5"
         placeholder="비밀번호"
       />
-      <Link to="/main">
+      <Link to="/main-jaewoong">
         <button className="loginBtn">Login</button>
       </Link>
       {/*<button className="loginBtn" onClick={()=>{
         checkId() && checkPwd()
         ? console.log("로그인성공")
-        : alert("사용자이름에는 @이 포함되어야 하며 비밀번호는 5글자 이상 입력해주셔야 합니다.")
+        : alert("사용자이름에는 @이 포함되어야 하며 비밀번호는 5글자 이d상 입력해주셔야 합니다.")
       }}>login</button>*/}
     </form>
   );
