@@ -2,9 +2,7 @@
 @import '../../../../styles/common.scss';
 
 aside {
-  position: fixed;
-  right: 20px;
-  top: 100px;
+  margin-left: 30px;
 
   .userContainer {
     display: flex;
@@ -15,7 +13,6 @@ aside {
       border-radius: 90px;
     }
   }
-
   .asideBoxHeader {
     @include flexBetween;
     padding: 10px;
@@ -37,6 +34,14 @@ aside {
     .asideBoxList {
       display: flex;
       align-items: center;
+
+      span {
+        &::before {
+          content: ' ';
+          display: inline-block;
+          width: 10px;
+        }
+      }
     }
   }
   .story {

@@ -5,10 +5,9 @@ import './Main.scss';
 
 const Main = () => {
   return (
-    <>
+    <div className="mainFrame">
       <Nav />
       <main>
-        <Aside />
         <section>
           <article>
             <div className="postHeader">
@@ -87,8 +86,9 @@ const Main = () => {
             </div>
           </article>
         </section>
+        <Aside />
       </main>
-    </>
+    </div>
   );
 };
 

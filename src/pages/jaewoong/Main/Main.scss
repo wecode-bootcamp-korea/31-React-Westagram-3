@@ -2,12 +2,13 @@
 
 @import '../../../styles/common.scss';
 
-main {
-  display: flex;
+.mainFrame {
   background-color: wheat;
 
-  section {
-    margin: 100px 0 0 100px;
+  main {
+    display: flex;
+    max-width: 900px;
+    margin: 70px auto;
 
     article {
       display: flex;
@@ -87,7 +88,6 @@ main {
     }
   }
 }
-
 .invisible {
   visibility: hidden;
 }
