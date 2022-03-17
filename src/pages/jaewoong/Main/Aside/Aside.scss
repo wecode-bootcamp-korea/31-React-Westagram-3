@@ -1,81 +1,81 @@
 @charset "utf-8";
-@import '../../styles/common.scss';
+@import '../../../../styles/common.scss';
 
 aside {
   position: fixed;
+  right: 20px;
   top: 100px;
-  right: 100px;
 
-  .personalContainer {
+  .userContainer {
     display: flex;
-    flex-direction: column;
-
-    .userThumbnail {
+    align-items: center;
+    .myThumbnail {
       width: 40px;
-      height: 40px;
       margin: 10px 15px 10px 0px;
       border-radius: 90px;
     }
-    .asideBox {
-      position: relative;
-      width: 300px;
-      height: 200px;
-      margin-bottom: 10px;
-      border: 1px solid yellow;
-      background-color: white;
-      overflow: overlay;
+  }
 
-      .asideBoxHeader {
-        position: sticky;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        top: 0px;
-        padding: 10px;
-        background-color: white;
+  .asideBoxHeader {
+    @include flexBetween;
+    padding: 10px;
+    background-color: white;
 
-        .asideBoxTitle {
-          color: gray;
-          font-size: small;
-        }
-
-        .asideBoxSeeAllBtn {
-          color: black;
-          font-size: small;
-          font-weight: 500;
-          text-decoration: none;
-        }
-      }
-      .asideBoxList {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .thumbnailIdContainer {
-          @include flexRowCenter;
-        }
-        .followBtn {
-          color: blue;
-          font-size: small;
-        }
-      }
-    }
-    .footer {
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        width: 300px;
-
-        a {
-          padding: 10px;
-          color: gray;
-          text-decoration: none;
-        }
-      }
-      div {
-        color: gray;
-        padding: 10px;
-      }
+    .asideBoxSeeAllBtn {
+      color: black;
+      font-size: small;
+      font-weight: 500;
+      text-decoration: none;
     }
   }
+  .asideBox {
+    position: relative;
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: white;
+
+    .asideBoxList {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .story {
+    overflow-y: auto;
+  }
+  .recommand {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .footer {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      width: 300px;
+
+      a {
+        padding: 10px;
+        color: gray;
+        text-decoration: none;
+      }
+    }
+    div {
+      color: gray;
+      padding: 10px;
+    }
+  }
+}
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.middleThumbnail {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 90px;
 }

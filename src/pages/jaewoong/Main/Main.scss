@@ -2,15 +2,14 @@
 
 @import '../../../styles/common.scss';
 
-#mainPage {
-  position: relative;
+main {
   display: flex;
   background-color: wheat;
 
-  .section {
+  section {
     margin: 100px 0 0 100px;
 
-    .postContainer {
+    article {
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -18,17 +17,15 @@
       background-color: white;
       border: 1px solid lightgray;
 
-      .postTopbar {
-        display: flex;
-        justify-content: space-evenly;
+      .postHeader {
+        @include flexBetween;
         align-items: center;
 
-        .followeeId {
+        dl {
           width: 500px;
         }
         .tridotBtn {
           width: 20px;
-          height: 20px;
           margin: 10px;
         }
       }
@@ -40,20 +37,24 @@
         padding: 20px;
 
         .postIconBar {
-          display: flex;
-          justify-content: space-between;
+          @include flexBetween;
 
           .postIcon {
             width: 30px;
             height: 30px;
+            margin: 0 5px 5px 0;
           }
         }
         .postMaintext {
+          display: flex;
           margin: 10px 0;
+
+          dt {
+            margin-right: 10px;
+          }
         }
         .replyContents {
-          display: flex;
-          justify-content: space-between;
+          @include flexBetween;
 
           .replyIcon {
             width: 10px;
@@ -66,8 +67,7 @@
         }
       }
       .replyComponent {
-        display: flex;
-        justify-content: space-between;
+        @include flexBetween;
         align-items: center;
 
         .insertReply {
@@ -94,51 +94,6 @@
 
 .hidden {
   display: none;
-}
-
-@mixin flexColumnCenter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flexRowCenter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin flexColumnSpaceAround {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-@mixin LoginBtnFrame {
-  width: 200px;
-  height: 30px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.smallBoldFont {
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.smallGrayFont {
-  color: gray;
-  font-size: smaller;
-}
-
-.doubleLineContainer {
-  display: flex;
-  flex-direction: column;
 }
 
 .middleThumbnail {

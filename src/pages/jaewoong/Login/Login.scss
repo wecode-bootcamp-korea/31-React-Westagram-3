@@ -4,8 +4,7 @@
 
 #loginPage {
   height: 100vh;
-  display: grid;
-  place-items: center;
+  @include flexCenter;
   background-color: rgb(246, 252, 230);
 
   .loginContainer {
