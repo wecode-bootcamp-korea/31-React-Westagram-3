@@ -1,6 +1,8 @@
 import React from 'react';
 import './Main.scss';
 import Aside from './Aside/Aside';
+// import { FavoriteIcon } from '@mui/icons-material';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Main = () => {
   return (
@@ -18,7 +20,7 @@ const Main = () => {
                 </div>
 
                 <div className="articleTopRight">
-                  <i className="fa-solid fa-ellipsis" />
+                  <button type="button" className="btnDot" />
                 </div>
               </section>
               <div className="articleMiddle">
@@ -27,16 +29,10 @@ const Main = () => {
 
               <footer className="articleBottom">
                 <div className="articleBottomTop">
-                  <div className="articleBottomTopLeft">
-                    <div className="redHeart">
-                      <i className="fa-solid fa-heart" />
-                    </div>
-                    <i className="fa-regular fa-comment" />
-                    <i className="fa-solid fa-arrow-up-from-bracket" />
-                  </div>
-                  <div className="articleBottomTopRight">
-                    <i className="fa-regular fa-bookmark" />
-                  </div>
+                  <button type="button" className="btnHeart" />
+                  <button type="button" className="btnComment" />
+                  <button type="button" className="btnShare" />
+                  <button type="button" className="btnBookmark" />
                 </div>
                 <div className="articleBottomMiddle">
                   <div className="articleBottomMiddleLike">
