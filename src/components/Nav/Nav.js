@@ -5,7 +5,7 @@ const Nav = () => {
     <nav className="header">
       <div className="header-wrap">
         <div className="header-logo">
-          <img src="images/instagram.png" alt="" />
+          <img src="images/duhyeon/instagram.png" alt="" />
           <span className="logo-font">westagram</span>
         </div>
         <div className="header-search">
@@ -59,7 +59,7 @@ const Nav = () => {
             <li className="modal-logout">로그아웃</li>
           </ul>
         </div>
-        <div className="overlay"></div>
+        <div className="overlay" />
       </div>
     </nav>
   );
