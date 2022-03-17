@@ -9,9 +9,11 @@
   border: 1px solid #e9e9e9;
   z-index: 9999;
   background: #fff;
+
   li {
     padding: 10px 0;
     border-bottom: 1px solid #e9e9e9;
+
     a {
       display: block;
     }
@@ -21,6 +23,7 @@
 .container {
   background: #fafafa;
 }
+
 .header {
   position: fixed;
   top: 0;
@@ -28,6 +31,7 @@
   width: 100%;
   border-bottom: 1px solid #e9e9e9;
   background: #fff;
+
   .header-wrap {
     display: flex;
     justify-content: space-between;
@@ -37,10 +41,12 @@
     margin: 0 auto;
     padding: 20px 0;
   }
+
   .header-logo {
     .logo-font {
       font-family: 'Lobster', cursive;
       font-size: 17px;
+
       &:before {
         content: '';
         display: inline-block;
@@ -51,6 +57,7 @@
         margin: 0 10px;
       }
     }
+
     img {
       width: 30px;
       height: 30px;
@@ -58,28 +65,32 @@
   }
   .header-search {
     position: relative;
+
     input {
       width: 200px;
       height: 25px;
       border: 1px solid #aaaaaa;
       border-radius: 5px;
       padding: 3px 5px;
-      /* text-align: center; */
       background: #f1f1f1;
       transition: background 0.2s;
+
       + .search-icon {
         display: block;
       }
+
       &:focus + .search-icon {
         display: none;
       }
     }
+
     .search-icon {
       position: absolute;
       top: 0;
       left: 50%;
       line-height: 25px;
       transform: translate(-50%);
+
       &:before {
         content: '';
         display: inline-block;
@@ -91,6 +102,7 @@
       }
     }
   }
+
   .search-list-wrap {
     display: none;
     position: absolute;
@@ -99,54 +111,66 @@
     width: 230px;
     border: 1px solid #e9e9e9;
     background: #fff;
+
     .search-list {
       display: flex;
       padding: 10px;
       background: #fff;
       transition: background 0.2s;
+
       &:hover {
         background: #f5f5f5;
       }
+
       img {
         width: 40px;
         height: 40px;
         border-radius: 100%;
       }
+
       dl {
         margin-left: 10px;
       }
+
       dt {
         font-weight: bold;
       }
+
       dd {
         color: #8e8e8e;
       }
     }
   }
+
   .header-util {
     position: relative;
     display: flex;
     z-index: 50;
+
     button {
       font-size: 0;
       width: 25px;
       height: 25px;
       margin-left: 20px;
+
       &:first-child {
         margin-left: 0;
       }
     }
+
     .btn-more-feed {
       background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png)
         no-repeat center center;
       background-size: 25px;
     }
+
     .btn-alram {
       position: relative;
       background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png)
         no-repeat center center;
       background-size: 25px;
     }
+
     .btn-alram.on:after {
       position: absolute;
       bottom: -10px;
@@ -159,16 +183,19 @@
       background: #ff0000;
       border-radius: 100%;
     }
+
     .btn-mypage {
       background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png)
         no-repeat center center;
       background-size: 25px;
     }
+
     .btn-profile {
       background: url(../assets/images/user.png) no-repeat center center;
       background-size: 25px;
     }
   }
+
   .overlay {
     display: none;
     position: fixed;
@@ -180,6 +207,7 @@
     height: 100%;
     background: transparent;
   }
+
   .overlay.active {
     display: block;
   }
@@ -197,6 +225,7 @@
   border-radius: 8px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
   z-index: 100;
+
   &:after {
     content: '';
     position: absolute;
@@ -207,15 +236,18 @@
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
   }
+
   &:hover {
     background: #e9e9e9;
   }
+
   li {
     width: 200px;
     padding: 10px 10px 10px 15px;
     background: #fff;
     transition: background 0.2s;
     cursor: pointer;
+
     &:before {
       content: '';
       display: inline-block;
@@ -226,18 +258,22 @@
       vertical-align: top;
     }
   }
+
   .modal-profile:before {
     background: url(../assets/images/user.png) no-repeat center center;
     background-size: 20px;
   }
+
   .modal-save:before {
     background: url(../assets/images/bookmark_off.png) no-repeat center center;
     background-size: 20px;
   }
+
   .modal-setting:before {
     background: url(../assets/images/setting.png) no-repeat center center;
     background-size: 20px;
   }
+
   .modal-logout {
     border-top: 1px solid #e9e9e9;
     padding-left: 20px;
@@ -246,6 +282,7 @@
     }
   }
 }
+
 .profile-modal.active {
   display: block;
 }
@@ -258,22 +295,28 @@
   width: 100%;
   margin: 0 auto;
 }
+
 .feeds {
   width: 600px;
+
   article {
     border: 1px solid #e9e9e9;
+
     .feed-title {
       background: #fff;
       padding: 10px 15px;
+
       img {
         width: 25px;
         height: 25px;
         margin-right: 10px;
         border-radius: 25px;
       }
+
       .feed-id {
         font-weight: bold;
       }
+
       .btn-feed {
         float: right;
         font-size: 0;
@@ -283,10 +326,13 @@
         background-size: 20px;
       }
     }
+
     .feed-bg {
       background: #fff;
+
       .feed-btn-wrap {
         padding: 5px 10px 5px 10px;
+
         button {
           font-size: 0;
           width: 25px;
@@ -294,31 +340,38 @@
           margin-right: 5px;
           transition: background 0.2s;
         }
+
         .btn-mark {
           float: right;
         }
+
         .btn-like {
           background: url(../assets/images/heart_off.png) no-repeat center
             center;
           background-size: 23px;
         }
+
         .btn-like.active {
           background: url(../assets/images/heart_on.png) no-repeat center center;
           background-size: 23px;
         }
+
         .btn-write {
           background: url(../assets/images/chat.png) no-repeat center center;
           background-size: 25px;
         }
+
         .btn-share {
           background: url(../assets/images/upload.png) no-repeat center center;
           background-size: 20px;
         }
+
         .btn-mark {
           background: url(../assets/images/bookmark_off.png) no-repeat center
             center;
           background-size: 23px;
         }
+
         .btn-mark.active {
           background: url(../assets/images/bookmark_on.png) no-repeat center
             center;
@@ -330,29 +383,36 @@
         padding: 5px 5px 5px 15px;
         display: flex;
         align-items: center;
+
         &:after {
           content: '';
           clear: both;
           display: block;
         }
+
         img {
           width: 18px;
           height: 18px;
           border-radius: 18px;
         }
+
         .like-count {
           margin-left: 5px;
+
           .bold {
             font-weight: bold;
           }
         }
       }
+
       .feed-information {
         padding: 5px 15px;
         border-bottom: 1px solid #e9e9e9;
+
         .feed-id {
           font-weight: bold;
         }
+
         .feed-content {
           display: inline-block;
           width: 150px;
@@ -360,27 +420,33 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           vertical-align: top;
+
           + .btn-more {
             display: inline-block;
             color: #aaaaaa;
           }
         }
+
         .feed-content.more {
           display: inline;
           white-space: normal;
+
           + .btn-more {
             display: none;
           }
         }
+
         .feed-comment-wrap {
           position: relative;
           display: flex;
           flex-wrap: wrap;
+
           .user-comment {
             .feed-comment {
               margin-left: 3px;
               vertical-align: top;
             }
+
             .btn-like {
               position: absolute;
               top: 0;
@@ -394,6 +460,7 @@
               background-size: 15px 15px;
               vertical-align: top;
             }
+
             .btn-like.active {
               background: url(../assets/images/heart_on.png) no-repeat 99.9%
                 center;
@@ -401,18 +468,22 @@
             }
           }
         }
+
         .write-time {
           color: #c9c9c9;
         }
       }
+
       .write-comment {
         position: relative;
+
         input {
           padding: 15px;
           width: 100%;
           border: 0 none;
           background: #fff;
         }
+
         .btn-comment {
           position: absolute;
           right: 15px;
@@ -423,6 +494,7 @@
           transition: color 0.2s;
           cursor: initial;
         }
+
         .btn-comment.active {
           color: #0095f6;
           cursor: pointer;
