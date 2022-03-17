@@ -3,9 +3,8 @@
 .mainRight {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
-  margin-left: 50px;
-  margin-top: 100px;
+  max-width: 280px;
+  margin-left: 30px;
 
   .mainRightTop {
     display: flex;
@@ -70,8 +69,6 @@
 
   li {
     display: flex;
-    max-width: 100%;
-    max-height: 100%;
     padding: 10px;
     margin-left: 10px;
   }
@@ -92,7 +89,7 @@
   .mainRightBottomListProfile {
     display: flex;
     justify-content: space-between;
-    align-content: space-between;
+    // align-content: space-between;
     width: 400px;
   }
 
@@ -114,11 +111,11 @@
   .mainRightUnder {
     color: lightgray;
     margin-top: 25px;
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .mainRightUnderText2 {
-    margin-top: 25px;
+    margin-top: 20px;
   }
 
   ul {

@@ -1,12 +1,14 @@
 import React from 'react';
 import './Main.scss';
 import Aside from './Aside/Aside';
+import Nav from '../../../components/Nav/Nav';
 // import { FavoriteIcon } from '@mui/icons-material';
 // import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Main = () => {
   return (
     <div className="Main">
+      <Nav />
       <main className="page">
         <div className="main">
           <div className="feeds">

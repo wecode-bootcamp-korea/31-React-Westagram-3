@@ -7,16 +7,16 @@
 }
 
 .Main {
-  width: 100vw;
-  height: 100vh;
   background-color: #fafafa;
+  height: 1500px;
+  padding-top: 150px;
+
   /* 메인 페이지  */
   .page {
     background-color: #fafafa;
-    border-top: 1px solid lightgray;
     display: flex;
-    justify-content: center;
-    height: 1000px;
+    max-width: 900px;
+    margin: 0 auto;
     // .main {
     //   background-color: #fafafa;
     //   display: flex;
@@ -27,8 +27,6 @@
     // }
 
     .feeds {
-      background-color: white;
-      margin-top: 100px;
       /* 피드 화면  */
       .article {
         display: flex;
@@ -82,10 +80,10 @@
         .articleBottom {
           display: flex;
           flex-direction: column;
+          position: relative;
 
           .articleBottomTop {
             display: flex;
-            position: relative;
             width: 100%;
             padding: 6px 15px;
             font-size: 20px;
@@ -118,8 +116,7 @@
 
             .btnBookmark {
               position: absolute;
-              right: 3px;
-              top: 3px;
+              right: 1px;
               width: 30px;
               height: 30px;
               font-size: 0;
@@ -177,7 +174,7 @@
 
           .articleBottomBottomComment {
             border: none;
-            background-color: white;
+            background-color: #fafafa;
             margin-left: 10px;
             width: 500px;
             outline: none;
@@ -186,7 +183,7 @@
           .articleBottomBottomCommentBtn {
             border: none;
             padding: 10px;
-            background-color: white;
+            background-color: #fafafa;
             color: lightsteelblue;
             width: 70px;
             outline: none;
