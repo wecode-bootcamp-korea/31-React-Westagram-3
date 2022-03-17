@@ -5,7 +5,7 @@ const Nav = () => {
     <nav className="header">
       <div className="header-wrap">
         <div className="header-logo">
-          <img src="images/instagram.png" alt="" />
+          <img src="images/common/instagram.png" alt="" />
           <span className="logo-font">westagram</span>
         </div>
         <div className="header-search">
@@ -13,14 +13,14 @@ const Nav = () => {
           <p className="search-icon">검색</p>
           <ul className="search-list-wrap">
             <li className="search-list">
-              <img src="./images/javascript.png" alt="" />
+              <img src="images/common/javascript.png" alt="" />
               <dl>
                 <dt className="search-id">wecode_bootacamp</dt>
                 <dd className="search-sub">i want frontEnd</dd>
               </dl>
             </li>
             <li className="search-list">
-              <img src="./images/javascript.png" alt="" />
+              <img src="images/common/javascript.png" alt="" />
               <dl>
                 <dt className="search-id">wecode_bootacamp</dt>
                 <dd className="search-sub">i want frontEnd</dd>
@@ -29,7 +29,7 @@ const Nav = () => {
             <li className="search-list">
               <img
                 className="search-img"
-                src="./images/javascript.png"
+                src="images/common/javascript.png"
                 alt=""
               />
               <dl>
@@ -59,7 +59,7 @@ const Nav = () => {
             <li className="modal-logout">로그아웃</li>
           </ul>
         </div>
-        <div className="overlay"></div>
+        <div className="overlay" />
       </div>
     </nav>
   );
