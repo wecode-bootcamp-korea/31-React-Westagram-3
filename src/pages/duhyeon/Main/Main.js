@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Main/Main.scss';
 import Aside from './Aside/Aside';
 import Nav from '../../../components/Nav/Nav';
 
 const Main = () => {
+  const [btnActive, setBtnActive] = useState(false);
+  const addClassActive = () => {
+    setBtnActive(!btnActive);
+  };
+  const [comment, setComment] = useState('');
+
+  const commentChange = e => {
+    setComment(e.target.value);
+    console.log(e.target.value);
+  };
+
+  // const commentBtnActive = () => {
+  //   return comment.length > 0 ;
+  // };
+
   return (
     <div className="container">
       <Nav />
@@ -22,7 +37,11 @@ const Main = () => {
             </div>
             <div className="feed-bg">
               <div className="feed-btn-wrap">
-                <button type="button" className="btn-like">
+                <button
+                  type="button"
+                  className="btn-like"
+                  onClick={addClassActive}
+                >
                   좋아요
                 </button>
                 <button type="button" className="btn-write">
@@ -70,9 +89,12 @@ const Main = () => {
                 <input
                   type="text"
                   id="feed-comment"
+                  onChange={commentChange}
+                  value={comment}
+                  autoComplete="off"
                   placeholder="댓글 달기..."
                 />
-                <button type="button" className="btn-comment" disabled>
+                <button type="button" className="btn-comment">
                   게시
                 </button>
               </div>
