@@ -1,23 +1,36 @@
 import React, { useState } from 'react';
 import '../Main/Main.scss';
 import Aside from './Aside/Aside';
+import Comment from './Comment';
 import Nav from '../../../components/Nav/Nav';
 
 const Main = () => {
   const [btnActive, setBtnActive] = useState(false);
+  const [comment, setComment] = useState('');
+  const [isCommentBtn, setIsCommentBtn] = useState(false);
+  const [commentArray, setCommentArray] = useState([]);
+
   const addClassActive = () => {
     setBtnActive(!btnActive);
   };
-  const [comment, setComment] = useState('');
 
-  const commentChange = e => {
-    setComment(e.target.value);
-    console.log(e.target.value);
+  const commentChange = event => {
+    setComment(event.target.value);
+    hasCommentInput();
+  };
+  const hasCommentInput = () => {
+    comment.length ? setIsCommentBtn(true) : setIsCommentBtn(false);
   };
 
-  // const commentBtnActive = () => {
-  //   return comment.length > 0 ;
-  // };
+  const handleCommentList = event => {
+    event.preventDefault();
+    if (comment === '') {
+      return;
+    } else {
+      setCommentArray(prevComment => [...prevComment, comment]);
+      setComment('');
+    }
+  };
 
   return (
     <div className="container">
@@ -75,28 +88,37 @@ const Main = () => {
                   더보기
                 </a>
                 <div className="feed-comment-wrap">
-                  <div className="user-comment">
-                    <span className="feed-id">duhyeon</span>
-                    <span className="feed-comment">그래서 안에 뭐넣을건데</span>
-                    <button type="button" className="btn-like">
-                      like
-                    </button>
-                  </div>
+                  {commentArray.map((value, key) => (
+                    <div key={key} className="user-comment">
+                      <span className="feed-id">duhyeon</span>
+                      <span className="feed-comment">{value}</span>
+                      <button type="button" className="btn-like">
+                        like
+                      </button>
+                    </div>
+                  ))}
                 </div>
                 <p className="write-time">42분 전</p>
               </div>
               <div className="write-comment">
-                <input
-                  type="text"
-                  id="feed-comment"
-                  onChange={commentChange}
-                  value={comment}
-                  autoComplete="off"
-                  placeholder="댓글 달기..."
-                />
-                <button type="button" className="btn-comment">
-                  게시
-                </button>
+                <form className="comment-list" onSubmit={handleCommentList}>
+                  <input
+                    type="text"
+                    id="feed-comment"
+                    onChange={commentChange}
+                    value={comment}
+                    autoComplete="off"
+                    placeholder="댓글 달기..."
+                  />
+                  <button
+                    type="button"
+                    className="btn-comment"
+                    onClick={handleCommentList}
+                    disabled={isCommentBtn ? false : true}
+                  >
+                    게시
+                  </button>
+                </form>
               </div>
             </div>
           </article>

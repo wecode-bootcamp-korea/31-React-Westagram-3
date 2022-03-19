@@ -442,6 +442,8 @@
           flex-wrap: wrap;
 
           .user-comment {
+            position: relative;
+            width: 100%;
             .feed-comment {
               margin-left: 3px;
               vertical-align: top;
