@@ -87,17 +87,7 @@ const Main = () => {
                 <a href="#!" className="btn-more">
                   더보기
                 </a>
-                <div className="feed-comment-wrap">
-                  {commentArray.map((value, key) => (
-                    <div key={key} className="user-comment">
-                      <span className="feed-id">duhyeon</span>
-                      <span className="feed-comment">{value}</span>
-                      <button type="button" className="btn-like">
-                        like
-                      </button>
-                    </div>
-                  ))}
-                </div>
+                <Comment commentArray={commentArray} />
                 <p className="write-time">42분 전</p>
               </div>
               <div className="write-comment">
