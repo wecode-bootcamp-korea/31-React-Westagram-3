@@ -19,12 +19,13 @@ const Login = () => {
     setPw(event.target.value);
   };
 
+  // const isDisabled = () => {};
+
   const isValueTrue = () => {
     id.includes('@') && pw.length > 5
       ? goToMain()
       : alert('아이디, 비밀번호를 확인하세요.');
   };
-
   return (
     <div className="Login">
       <div className="main">
@@ -44,13 +45,13 @@ const Login = () => {
             className="pw"
             tpye="text"
             placeholder="비밀번호"
-            // onChange={this.handleChage}
           />
         </div>
         <input
           type="button"
           className="loginBtn"
           value="로그인"
+          disabled={id.length <= 1 || pw.length <= 1}
           onClick={isValueTrue}
         />
         <div className="lostPw">
