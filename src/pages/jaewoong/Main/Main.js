@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Aside from './Aside/Aside';
 import './Main.scss';
+import Comment from './Comment/Comment';
 
 const Main = () => {
+  const USERNAME = 'jayYoon';
+  const [textValue, setTextValue] = useState('');
+  const [commentList, setCommentList] = useState([]);
+  let commentCounter = 1;
+  const textHandler = e => {
+    setTextValue(e.target.value);
+  };
+
+  const submitComment = e => {
+    e.preventDefault();
+    let arr = commentList;
+    arr.push({ id: USERNAME, comment: textValue });
+    setCommentList(arr);
+
+    console.log(commentList);
+    setTextValue('');
+  };
   return (
     <div className="mainFrame">
       <Nav />
@@ -74,12 +92,21 @@ const Main = () => {
                 <dt className="bold">jay yoon</dt>
                 <dd>아 또가고싶다 또가면되지</dd>
               </dl>
-              <ul className="replyContainer" />
-              <form className="replyComponent">
+              <div className="replyContainer">
+                {commentList.map((commentList, i) => (
+                  <dl key={i} id={i}>
+                    <dt>{commentList.id}</dt>
+                    <dd>{commentList.comment}</dd>
+                  </dl>
+                ))}
+              </div>
+              <form className="replyComponent" onSubmit={submitComment}>
                 <input
                   className="insertReply"
                   type="text"
                   placeholder="댓글 달기..."
+                  value={textValue}
+                  onChange={textHandler}
                 />
                 <button className="submitReply">입력</button>
               </form>

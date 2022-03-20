@@ -54,18 +54,6 @@
             margin-right: 10px;
           }
         }
-        .replyContents {
-          @include flexBetween;
-
-          .replyIcon {
-            width: 10px;
-            height: 10px;
-            margin-left: 5px;
-          }
-          .replyText {
-            margin-left: 3px;
-          }
-        }
       }
       .replyComponent {
         @include flexBetween;
@@ -81,7 +69,7 @@
         .submitReply {
           width: 9%;
           height: 40px;
-          border: none;
+          border: 1px solid lightgray;
           border-radius: 5px;
         }
       }

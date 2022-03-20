@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+@import '../../../../styles/common.scss';
+
+dl {
+  display: flex;
+  margin: 10px 0;
+
+  dt {
+    margin-right: 10px;
+  }
+}
