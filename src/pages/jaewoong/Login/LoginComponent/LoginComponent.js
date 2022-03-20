@@ -1,25 +1,19 @@
-import { isValidDateValue } from '@testing-library/user-event/dist/utils';
-import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginComponent.scss';
 
-const LoginComponent = () => {
-  const [username, setUsername] = useState();
-  const [pwd, setPwd] = useState();
-  const [inputValidation, setInputValidation] = useState(false);
-
+const LoginComponent = props => {
   const navigate = useNavigate();
 
   const handleIdInput = e => {
     const target = e.target;
-    setUsername(target.value);
+    props.setUsername(target.value);
     checkUserValidation();
   };
 
   const handlePwdInput = e => {
     const target = e.target;
-    setPwd(target.value);
+    props.setPwd(target.value);
     checkUserValidation();
   };
 
@@ -34,16 +28,17 @@ const LoginComponent = () => {
       else return true;
     };
 
-    checkUsername(username) && checkPwd(pwd)
-      ? setInputValidation(true)
-      : setInputValidation(false);
+    checkUsername(props.username) && checkPwd(props.pwd)
+      ? props.setInputValidation(true)
+      : props.setInputValidation(false);
   };
 
-  const handleSubmit = () => {
-    inputValidation
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.inputValidation
       ? navigate('/main-jaewoong', {
           state: {
-            username: username,
+            username: props.username,
           },
         })
       : alert('다시 입력해주세요');
@@ -70,7 +65,7 @@ const LoginComponent = () => {
         </button>
       </Link>*/}
       <button
-        className={inputValidation ? 'btnActivate' : 'loginBtn'}
+        className={props.inputValidation ? 'btnActivate' : 'loginBtn'}
         type="submit"
       >
         login
