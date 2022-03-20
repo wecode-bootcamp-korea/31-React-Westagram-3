@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import './Main.scss';
 import Aside from './Aside/Aside';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './Comment';
 // import { FavoriteIcon } from '@mui/icons-material';
 // import FavoriteIcon from '@mui/icons-material/Favorite';
 
@@ -10,21 +11,21 @@ const Main = () => {
   const [commentArr, setCommentArr] = useState([]);
   const [comment, setComment] = useState('');
 
-  const onClick = e => {
-    if (e.key === 'enter') handleInputList();
-  };
+  // const onClick = e => {
+  //   if (e.key === 'enter') handleInputList();
+  // };
 
   const handleInputList = e => {
     e.preventDefault();
-    if (comment === '') {
-      return;
-    } else {
-      let newComment = [...commentArr];
-      newComment.push(comment);
-      setCommentArr(newComment);
-      setComment('');
-    }
+    // if (comment === '') {
+    //   return;
+    // }
+    let newComment = [...commentArr];
+    newComment.push(comment);
+    setCommentArr(newComment);
+    setComment('');
   };
+  // };
 
   return (
     <div className="Main">
@@ -66,11 +67,13 @@ const Main = () => {
                 </div>
                 <div className="articleBottomMiddleComment">
                   <div className="articleBottomMiddleCommentText">
-                    <ul>
-                      {commentArr.map((item, i) => {
-                        return <li>{item}</li>;
-                      })}
-                    </ul>
+                    <div className="articleBottomMiddleCommentText">
+                      <ul>
+                        {commentArr.map((comment, i) => {
+                          return <Comment comment={comment} key={i} />;
+                        })}
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <form className="articleBottomBottom">
