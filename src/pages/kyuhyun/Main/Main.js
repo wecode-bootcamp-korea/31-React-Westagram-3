@@ -3,49 +3,41 @@ import { useEffect, useState } from 'react';
 import './Main.scss';
 import Aside from './Aside/Aside';
 import Nav from '../../../components/Nav/Nav';
-import Comment from './Comment';
-// import { FavoriteIcon } from '@mui/icons-material';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import Comment from './Comment';
+import Feed from './Feed';
 
 const Main = () => {
   const [commentArr, setCommentArr] = useState([]);
   const [comment, setComment] = useState('');
+  const [feedArr, setFeedArr] = useState([]);
+
+  const onClick = e => {
+    if (e.key === 'enter') handleInputList();
+  };
+
+  useEffect(() => {
+    fetch('/data/feedData.json')
+      .then(res => res.json())
+      .then(res => setFeedArr(res));
+  }, []);
 
   useEffect(() => {
     fetch('/data/commentData.json')
       .then(res => res.json())
       .then(res => setCommentArr(res));
   }, []);
-  // const onClick = e => {
-  //   if (e.key === 'enter') handleInputList();
-  // };
-  // useEffect(() => {
-  //   fetch('/data/feedData.json')
-  //   .then(res=> res.json())
-  //   .then(res=> 피드배열 만들어줘야함 (res));
-  // }, []);
-
-  // const handleFeedList = e => {
-  //   e.preventDefault();
-  //   let
-  // }
 
   const handleInputList = e => {
     e.preventDefault();
-    // if (comment === '') {
-    //   return;
-    // }
     let newComment = [...commentArr];
     newComment.push({
       id: newComment.length + 1,
       userName: 'loubxxtin',
       content: comment,
     });
-
     setCommentArr(newComment);
     setComment('');
   };
-  // };
 
   return (
     <div className="Main">
@@ -53,7 +45,21 @@ const Main = () => {
       <main className="page">
         <div className="main">
           <div className="feeds">
-            <article className="article">
+            {feedArr.map(feedItem => {
+              return (
+                <Feed
+                  key={feedItem.id}
+                  topUserImg={feedItem.topUserImg}
+                  topUserName={feedItem.topUserName}
+                  mainImg={feedItem.mainImg}
+                  commentArr={commentArr}
+                  comment={comment}
+                  setComment={setComment}
+                  handleInputList={handleInputList}
+                />
+              );
+            })}
+            {/* <article className="article">
               <section className="articleTop">
                 <div className="articleTopLeft">
                   <div className="articleTopLeftImg">
@@ -122,7 +128,7 @@ const Main = () => {
                   </button>
                 </form>
               </footer>
-            </article>
+            </article> */}
           </div>
         </div>
         {/* 메인우측시작 */}
