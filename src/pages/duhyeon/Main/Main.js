@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Main/Main.scss';
 import Aside from './Aside/Aside';
 import Comment from './Comment';
@@ -27,10 +27,25 @@ const Main = () => {
     if (comment === '') {
       return;
     } else {
-      setCommentArray(prevComment => [...prevComment, comment]);
+      setCommentArray(prevComment => [...prevComment, myComment]);
       setComment('');
     }
   };
+  const myComment = {
+    id: comment.length + 1,
+    userName: 'duhyeon',
+    content: comment,
+    isLiked: false,
+  };
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentArray(data);
+      });
+  }, []);
 
   return (
     <div className="container">
@@ -87,7 +102,18 @@ const Main = () => {
                 <a href="#!" className="btn-more">
                   더보기
                 </a>
-                <Comment commentArray={commentArray} />
+                <ul className="feed-comment-wrap">
+                  {commentArray.map((comment, id) => {
+                    return (
+                      <Comment
+                        key={id}
+                        userName={comment.userName}
+                        content={comment.content}
+                        isLiked={comment.isLiked}
+                      />
+                    );
+                  })}
+                </ul>
                 <p className="write-time">42분 전</p>
               </div>
               <div className="write-comment">
