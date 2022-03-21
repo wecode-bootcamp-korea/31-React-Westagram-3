@@ -1,5 +1,10 @@
 import React from 'react';
-const Comment = ({ comment, i }) => {
-  return <li key={i}>{comment}</li>;
+const Comment = ({ key, userName, comment }) => {
+  return (
+    <li key={key}>
+      {userName}
+      {comment}
+    </li>
+  );
 };
 export default Comment;

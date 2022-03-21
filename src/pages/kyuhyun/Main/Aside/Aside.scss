@@ -1,6 +1,9 @@
 @charset "utf-8";
 
 .mainRight {
+  position: fixed;
+  top: 135px;
+  right: 230px;
   display: flex;
   flex-direction: column;
   max-width: 280px;

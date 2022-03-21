@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Main.scss';
 import Aside from './Aside/Aside';
 import Nav from '../../../components/Nav/Nav';
@@ -11,9 +11,24 @@ const Main = () => {
   const [commentArr, setCommentArr] = useState([]);
   const [comment, setComment] = useState('');
 
+  useEffect(() => {
+    fetch('/data/commentData.json')
+      .then(res => res.json())
+      .then(res => setCommentArr(res));
+  }, []);
   // const onClick = e => {
   //   if (e.key === 'enter') handleInputList();
   // };
+  // useEffect(() => {
+  //   fetch('/data/feedData.json')
+  //   .then(res=> res.json())
+  //   .then(res=> 피드배열 만들어줘야함 (res));
+  // }, []);
+
+  // const handleFeedList = e => {
+  //   e.preventDefault();
+  //   let
+  // }
 
   const handleInputList = e => {
     e.preventDefault();
@@ -21,7 +36,12 @@ const Main = () => {
     //   return;
     // }
     let newComment = [...commentArr];
-    newComment.push(comment);
+    newComment.push({
+      id: newComment.length + 1,
+      userName: 'loubxxtin',
+      content: comment,
+    });
+
     setCommentArr(newComment);
     setComment('');
   };
@@ -69,8 +89,14 @@ const Main = () => {
                   <div className="articleBottomMiddleCommentText">
                     <div className="articleBottomMiddleCommentText">
                       <ul>
-                        {commentArr.map((comment, i) => {
-                          return <Comment comment={comment} key={i} />;
+                        {commentArr.map(comment => {
+                          return (
+                            <Comment
+                              key={comment.id}
+                              userName={comment.userName}
+                              comment={comment.content}
+                            />
+                          );
                         })}
                       </ul>
                     </div>

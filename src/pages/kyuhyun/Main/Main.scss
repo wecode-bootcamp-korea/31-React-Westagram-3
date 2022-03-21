@@ -10,11 +10,13 @@
   background-color: #fafafa;
   height: 1500px;
   padding-top: 150px;
+  position: relative;
 
   /* 메인 페이지  */
   .page {
     background-color: #fafafa;
     display: flex;
+    flex-direction: column;
     max-width: 900px;
     margin: 0 auto;
     // .main {
