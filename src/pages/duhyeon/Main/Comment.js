@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Comment = props => {
+const Comment = ({ userName, content, isLiked }) => {
   return (
     <li className="user-comment">
-      <span className="feed-id">{props.userName}</span>
-      <span className="feed-comment">{props.content}</span>
+      <span className="feed-id">{userName}</span>
+      <span className="feed-comment">{content}</span>
       <button
         type="button"
-        className={props.isLiked ? 'btn-like active' : 'btn-like'}
+        className={isLiked ? 'btn-like active' : 'btn-like'}
       >
         like
       </button>
