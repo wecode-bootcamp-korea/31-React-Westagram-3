@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import LoginComponent from './LoginComponent/LoginComponent';
 import './Login.scss';
 

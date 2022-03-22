@@ -1,4 +1,6 @@
 import React from 'react';
+import FooterList from './FooterList';
+import FOOTER_DATA from './footerData';
 import './Aside.scss';
 
 const Aside = () => {
@@ -139,39 +141,9 @@ const Aside = () => {
       </div>
       <div className="footer">
         <ul>
-          <li>
-            <a href="w">instagram 정보</a>
-          </li>
-          <li>
-            <a href="w">지원</a>
-          </li>
-          <li>
-            <a href="w">홍보센터</a>
-          </li>
-          <li>
-            <a href="w">API</a>
-          </li>
-          <li>
-            <a href="w">채용 정보</a>
-          </li>
-          <li>
-            <a href="w">개인정보처리방침</a>
-          </li>
-          <li>
-            <a href="w">약관</a>
-          </li>
-          <li>
-            <a href="w">디렉터리</a>
-          </li>
-          <li>
-            <a href="w">프로필</a>
-          </li>
-          <li>
-            <a href="w">해시태그</a>
-          </li>
-          <li>
-            <a href="w">언어</a>
-          </li>
+          {FOOTER_DATA.map((footer, i) => {
+            return <FooterList key={i} name={footer.name} url={footer.url} />;
+          })}
         </ul>
         <div>2019 WESTAGRAM</div>
       </div>

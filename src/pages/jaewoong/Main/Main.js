@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Aside from './Aside/Aside';
 import './Main.scss';
@@ -6,18 +6,29 @@ import Comment from './Comment/Comment';
 
 const Main = () => {
   const USERNAME = 'jayYoon';
-  const [textValue, setTextValue] = useState('');
+  const [content, setContent] = useState('');
   const [commentList, setCommentList] = useState([]);
-  const textHandler = e => {
-    setTextValue(e.target.value);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/jaewoong/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
+
+  const contentHandler = e => {
+    setContent(e.target.value);
   };
 
   const submitComment = e => {
     e.preventDefault();
     let arr = commentList;
-    arr.push({ id: USERNAME, comment: textValue });
+    arr.push({ userName: USERNAME, content: content, isLiked: false });
     setCommentList(arr);
-    setTextValue('');
+    setContent('');
   };
 
   return (
@@ -91,17 +102,13 @@ const Main = () => {
                 <dd>아 또가고싶다 또가면되지</dd>
               </dl>
               <div className="replyContainer">
-                {/* {commentList.map((commentList, i) => (
-                  <dl key={i} id={i}>
-                    <dt>{commentList.id}</dt>
-                    <dd>{commentList.comment}</dd>
-                  </dl>
-                ))} */}
                 {commentList.map((commentList, i) => (
                   <Comment
                     key={i}
-                    id={commentList.id}
-                    comment={commentList.comment}
+                    id={i}
+                    userName={commentList.userName}
+                    content={commentList.content}
+                    isLiked={commentList.isLiked}
                   />
                 ))}
               </div>
@@ -110,8 +117,8 @@ const Main = () => {
                   className="insertReply"
                   type="text"
                   placeholder="댓글 달기..."
-                  value={textValue}
-                  onChange={textHandler}
+                  value={content}
+                  onChange={contentHandler}
                 />
                 <button className="submitReply">입력</button>
               </form>
