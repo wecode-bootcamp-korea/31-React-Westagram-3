@@ -8,7 +8,6 @@ const Main = () => {
   const USERNAME = 'jayYoon';
   const [textValue, setTextValue] = useState('');
   const [commentList, setCommentList] = useState([]);
-  let commentCounter = 1;
   const textHandler = e => {
     setTextValue(e.target.value);
   };
@@ -18,10 +17,9 @@ const Main = () => {
     let arr = commentList;
     arr.push({ id: USERNAME, comment: textValue });
     setCommentList(arr);
-
-    console.log(commentList);
     setTextValue('');
   };
+
   return (
     <div className="mainFrame">
       <Nav />
@@ -93,11 +91,18 @@ const Main = () => {
                 <dd>아 또가고싶다 또가면되지</dd>
               </dl>
               <div className="replyContainer">
-                {commentList.map((commentList, i) => (
+                {/* {commentList.map((commentList, i) => (
                   <dl key={i} id={i}>
                     <dt>{commentList.id}</dt>
                     <dd>{commentList.comment}</dd>
                   </dl>
+                ))} */}
+                {commentList.map((commentList, i) => (
+                  <Comment
+                    key={i}
+                    id={commentList.id}
+                    comment={commentList.comment}
+                  />
                 ))}
               </div>
               <form className="replyComponent" onSubmit={submitComment}>

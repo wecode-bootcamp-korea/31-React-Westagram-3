@@ -1,48 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginComponent.scss';
 
-const LoginComponent = props => {
+const LoginComponent = () => {
+  const [username, setUsername] = useState('');
+  const [pwd, setPwd] = useState('');
   const navigate = useNavigate();
+  // const [inputValidation, setInputValidation] = useState(true);
 
   const handleIdInput = e => {
-    const target = e.target;
-    props.setUsername(target.value);
-    checkUserValidation();
+    // setUsername(e.target.value);
+    const { value } = e.target;
+    setUsername(value);
   };
 
   const handlePwdInput = e => {
-    const target = e.target;
-    props.setPwd(target.value);
-    checkUserValidation();
-  };
-
-  const checkUserValidation = () => {
-    const checkUsername = username => {
-      if (username.indexOf('@') == -1) return false;
-      else return true;
-    };
-
-    const checkPwd = pwd => {
-      if (pwd.length < 5) return false;
-      else return true;
-    };
-
-    checkUsername(props.username) && checkPwd(props.pwd)
-      ? props.setInputValidation(true)
-      : props.setInputValidation(false);
+    // setPwd(e.target.value);
+    const { value } = e.target;
+    setPwd(value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.inputValidation
-      ? navigate('/main-jaewoong', {
-          state: {
-            username: props.username,
-          },
-        })
-      : alert('다시 입력해주세요');
+    navigate('/main-jaewoong', {
+      state: {
+        username: username,
+      },
+    });
   };
+  // const checkUserValidation = () => {
+  //   const checkUsername = username => {
+  //     if (username.indexOf('@') == -1) return false;
+  //     else return true;
+  //   };
+
+  //   const checkPwd = pwd => {
+  //     if (pwd.length < 5) return false;
+  //     else return true;
+  //   };
+
+  //   checkUsername(props.username) && checkPwd(props.pwd)
+  //     ? setInputValidation(true)
+  //     : setInputValidation(false);
+  // };
 
   return (
     <form className="loginForm" onSubmit={handleSubmit}>
@@ -57,6 +57,7 @@ const LoginComponent = props => {
         type="password"
         placeholder="비밀번호"
         minLength={5}
+        autoComplete="on"
         onChange={handlePwdInput}
       />
       {/*<Link to="/main-jaewoong">
@@ -65,7 +66,11 @@ const LoginComponent = props => {
         </button>
       </Link>*/}
       <button
-        className={props.inputValidation ? 'btnActivate' : 'loginBtn'}
+        className={
+          username.indexOf('@') !== -1 && pwd.length > 4
+            ? 'btnActivate'
+            : 'loginBtn'
+        }
         type="submit"
       >
         login

@@ -5,8 +5,8 @@ import './Comment.scss';
 const Comment = props => {
   return (
     <dl>
-      <dt className="username bold">dd</dt>
-      <dd className="commentContents">담에 같이가자~</dd>
+      <dt>{props.id}</dt>
+      <dd>{props.comment}</dd>
     </dl>
   );
 };
