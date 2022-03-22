@@ -7,13 +7,13 @@ import Nav from '../../../components/Nav/Nav';
 import Feed from './Feed';
 
 const Main = () => {
-  const [commentArr, setCommentArr] = useState([]);
-  const [comment, setComment] = useState('');
+  // const [commentArr, setCommentArr] = useState([...commentList]);
+  // const [comment, setComment] = useState('');
   const [feedArr, setFeedArr] = useState([]);
 
-  const onClick = e => {
-    if (e.key === 'enter') handleInputList();
-  };
+  // const onClick = e => {
+  //   if (e.key === 'enter') handleInputList();
+  // };
 
   useEffect(() => {
     fetch('/data/feedData.json')
@@ -21,23 +21,23 @@ const Main = () => {
       .then(res => setFeedArr(res));
   }, []);
 
-  useEffect(() => {
-    fetch('/data/commentData.json')
-      .then(res => res.json())
-      .then(res => setCommentArr(res));
-  }, []);
+  // useEffect(() => {
+  //   fetch('/data/commentData.json')
+  //     .then(res => res.json())
+  //     .then(res => setCommentArr(res));
+  // }, []);
 
-  const handleInputList = e => {
-    e.preventDefault();
-    let newComment = [...commentArr];
-    newComment.push({
-      id: newComment.length + 1,
-      userName: 'loubxxtin',
-      content: comment,
-    });
-    setCommentArr(newComment);
-    setComment('');
-  };
+  // const handleInputList = e => {
+  //   e.preventDefault();
+  //   let newComment = [...commentArr];
+  //   newComment.push({
+  //     id: newComment.length + 1,
+  //     userName: 'loubxxtin',
+  //     content: comment,
+  //   });
+  //   setCommentArr(newComment);
+  //   setComment('');
+  // };
 
   return (
     <div className="Main">
@@ -49,13 +49,15 @@ const Main = () => {
               return (
                 <Feed
                   key={feedItem.id}
-                  topUserImg={feedItem.topUserImg}
-                  topUserName={feedItem.topUserName}
-                  mainImg={feedItem.mainImg}
-                  commentArr={commentArr}
-                  comment={comment}
-                  setComment={setComment}
-                  handleInputList={handleInputList}
+                  feedItem={feedItem}
+
+                  // topUserName={feedItem.topUserName}
+                  // mainImg={feedItem.mainImg}
+                  // commentArr={commentArr}
+                  // comment={comment}
+                  // setComment={setComment}
+                  // handleInputList={handleInputList}
+                  // commentList={commentList}
                 />
               );
             })}

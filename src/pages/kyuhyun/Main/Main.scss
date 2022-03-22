@@ -8,7 +8,7 @@
 
 .Main {
   background-color: #fafafa;
-  height: 1500px;
+  height: 100%;
   padding-top: 150px;
   position: relative;
 
@@ -37,6 +37,7 @@
         border: 1px solid lightgray;
         border-radius: 5px;
         width: 600px;
+        margin-bottom: 50px;
 
         /* 피드 헤더 */
         .articleTop {
@@ -161,6 +162,17 @@
             flex-direction: row;
             justify-content: space-between;
             width: 550px;
+
+            ul {
+              li {
+                .name {
+                  font-weight: bold;
+                }
+                .comment {
+                  margin-left: 10px;
+                }
+              }
+            }
           }
           .textImg {
             width: 12px;

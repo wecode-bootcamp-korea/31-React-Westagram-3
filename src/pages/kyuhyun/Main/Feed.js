@@ -1,16 +1,37 @@
 import React from 'react';
 import Comment from './Comment';
+import { useEffect, useState } from 'react';
 
 const Feed = ({
-  id,
-  topUserImg,
-  topUserName,
-  mainImg,
-  comment,
-  commentArr,
-  setComment,
-  handleInputList,
+  feedItem: { id, topUserImg, topUserName, mainImg, commentList },
 }) => {
+  const [commentArr, setCommentArr] = useState([...commentList]);
+  // const commentArr = [...commentList];
+  const [comment, setComment] = useState('');
+  // const [feedArr, setFeedArr] = useState([]);
+
+  const onClick = e => {
+    if (e.key === 'enter') handleInputList();
+  };
+
+  // useEffect(() => {
+  //   fetch('/public/data/feedData.json')
+  //     .then(res => res.json())
+  //     .then(res => setCommentArr(res));
+  // }, []);
+
+  const handleInputList = e => {
+    e.preventDefault();
+    let newComment = [...commentArr];
+    newComment.push({
+      id: newComment.length + 1,
+      userName: 'loubxxtin',
+      content: comment,
+    });
+    setCommentArr(newComment);
+    setComment('');
+  };
+
   return (
     <div key={id}>
       <article className="article">
@@ -47,19 +68,17 @@ const Feed = ({
           </div>
           <div className="articleBottomMiddleComment">
             <div className="articleBottomMiddleCommentText">
-              <div className="articleBottomMiddleCommentText">
-                <ul>
-                  {commentArr.map(comment => {
-                    return (
-                      <Comment
-                        key={comment.key}
-                        userName={comment.userName}
-                        comment={comment.content}
-                      />
-                    );
-                  })}
-                </ul>
-              </div>
+              <ul>
+                {commentArr.map(comment => {
+                  return (
+                    <Comment
+                      key={comment.id}
+                      userName={comment.userName}
+                      comment={comment.content}
+                    />
+                  );
+                })}
+              </ul>
             </div>
           </div>
           <form className="articleBottomBottom">
