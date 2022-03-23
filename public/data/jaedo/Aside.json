@@ -1,0 +1,46 @@
+{
+  "story": [
+    {
+      "id": "jaedo",
+      "img": "/images/jaedo/emile-73-PGCksCZ8-unsplash.jpg",
+      "time": "15분전"
+    },
+    {
+      "id": "duhyeon",
+      "img": "/images/jaedo/derek-owens-WRLaQAABNrg-unsplash.jpg",
+      "time": "5분전"
+    },
+    {
+      "id": "jaewoong",
+      "img": "/images/jaedo/sarah-dorweiler-QeVmJxZOv3k-unsplash.jpg",
+      "time": "30분전"
+    },
+    {
+      "id": "kyuhyun",
+      "img": "/images/jaedo/malek-bee-7t5R6Pc5Uks-unsplash.jpg",
+      "time": "20분전"
+    }
+  ],
+  "recommend": [
+    {
+      "id": "hello",
+      "img": "/images/jaedo/ivan-diaz-yDgk902WAdY-unsplash.jpg",
+      "time": "23분전"
+    },
+    {
+      "id": "bye",
+      "img": "/images/jaedo/malek-bee-7t5R6Pc5Uks-unsplash.jpg",
+      "time": "50분전"
+    },
+    {
+      "id": "good",
+      "img": "/images/jaedo/ivan-diaz-yDgk902WAdY-unsplash.jpg",
+      "time": "13분전"
+    },
+    {
+      "id": "ball",
+      "img": "/images/jaedo/surface-rkr_jnaGzIk-unsplash.jpg",
+      "time": "2분전"
+    }
+  ]
+}

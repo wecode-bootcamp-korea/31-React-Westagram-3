@@ -1,1 +1,114 @@
 @charset "utf-8";
+
+.contentWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  .content {
+    margin: 0 auto;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #9e9a9a;
+    background-color: #f5f3f3;
+    margin-top: 30px;
+
+    .logo {
+      font-family: 'Lobster', cursive;
+      font-size: 40px;
+    }
+    .login {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      width: 90%;
+
+      .userId,
+      .userPassword {
+        width: 250px;
+        height: 50px;
+        background-color: #fafafa;
+        border: 1px solid #efefef;
+      }
+      .userPassword {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      .loginBtn {
+        width: 250px;
+        height: 40px;
+        color: white;
+        background-color: #1e7ad6;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        opacity: 1;
+        cursor: pointer;
+      }
+      .noLoginBtn {
+        width: 250px;
+        height: 40px;
+        color: white;
+        background-color: #1e7ad6;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        opacity: 0.5;
+        cursor: default;
+      }
+      .footer {
+        color: #275380;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+.create_modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #f5f3f3;
+  .createUser {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+    width: 80%;
+    background-color: #ffffff;
+    border: 1px solid gainsboro;
+
+    li {
+      margin-bottom: 10px;
+    }
+    button {
+      margin-left: 20px;
+      border: 1px solid black;
+      width: 70px;
+      height: 30px;
+    }
+
+    input {
+      width: 200px;
+    }
+    .passPw {
+      color: rgb(131, 194, 36);
+      font-weight: bold;
+      font-size: 10px;
+    }
+    .failPw {
+      color: red;
+      font-size: 10px;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,1 +1,19 @@
 @charset "utf-8";
+.mainWrap {
+  background-color: #fafafa;
+  padding-top: 100px;
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: conter;
+    padding: 20px;
+  }
+  .mainLeft {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .mainRight {
+    padding: 20px;
+  }
+}

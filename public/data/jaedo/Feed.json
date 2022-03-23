@@ -1,0 +1,45 @@
+{
+  "result": [
+    {
+      "user_id": "jaedo_kim123",
+      "profile_img": "/images/jaedo/emile-73-PGCksCZ8-unsplash.jpg",
+      "content_img": "/images/jaedo/derek-owens-WRLaQAABNrg-unsplash.jpg",
+      "comment_arr": [
+        {
+          "id": 1,
+          "content": "안녕하세요",
+          "like": false
+        },
+        {
+          "id": 2,
+          "content": "반가워요"
+        },
+        {
+          "id": 3,
+          "content": "잘있어요",
+          "like": false
+        }
+      ]
+    },
+    {
+      "user_id": "sarah",
+      "profile_img": "/images/jaedo/sarah-dorweiler-QeVmJxZOv3k-unsplash.jpg",
+      "content_img": "/images/jaedo/malek-bee-7t5R6Pc5Uks-unsplash.jpg",
+      "comment_arr": [
+        { "id": 1, "content": "hello", "like": false },
+        { "id": 2, "content": "hi", "like": false },
+        { "id": 3, "content": "bye", "like": false }
+      ]
+    },
+    {
+      "user_id": "ivan",
+      "profile_img": "/images/jaedo/ivan-diaz-yDgk902WAdY-unsplash.jpg",
+      "content_img": "/images/jaedo/surface-rkr_jnaGzIk-unsplash.jpg",
+      "comment_arr": [
+        { "id": 1, "content": "123", "like": false },
+        { "id": 2, "content": "456", "like": false },
+        { "id": 3, "content": "789", "like": false }
+      ]
+    }
+  ]
+}
