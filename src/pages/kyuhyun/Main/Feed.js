@@ -8,9 +8,9 @@ const Feed = ({
   const [commentArr, setCommentArr] = useState([...commentList]);
   const [comment, setComment] = useState('');
 
-  const onClick = e => {
-    if (e.key === 'enter') handleInputList();
-  };
+  // const onClick = e => {
+  //   if (e.key === 'enter') handleInputList();
+  // };
 
   const handleInputList = e => {
     e.preventDefault();

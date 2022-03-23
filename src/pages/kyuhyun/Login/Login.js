@@ -40,22 +40,22 @@ const Login = () => {
     setId('');
     setPw('');
   };
-  // fetch함수를 이용해 api 호출 - 로그인
-  const goToLogin = () => {
-    fetch('http://10.58.3.10:8000/users/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: 'kyuhyun',
-        email: id,
-        password: pw,
-        phone_number: '010',
-      }),
-    })
-      .then(res => res.json())
-      .then(result => (result.token ? goToMain() : alert(result.message)));
-    setId('');
-    setPw('');
-  };
+  // fetch함수를 이용해 api 호출 - 로그인 / 현재 API 를 불러오지 않기 때문에 주석
+  // const goToLogin = () => {
+  //   fetch('http://10.58.3.10:8000/users/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       name: 'kyuhyun',
+  //       email: id,
+  //       password: pw,
+  //       phone_number: '010',
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(result => (result.token ? goToMain() : alert(result.message)));
+  //   setId('');
+  //   setPw('');
+  // };
 
   return (
     <div className="Login">
@@ -101,7 +101,7 @@ const Login = () => {
           onClick={goToSignup}
         />
         <div className="lostPw">
-          <a src="/">비밀번호를 잊으셨나요?</a>
+          <span>비밀번호를 잊으셨나요?</span>
         </div>
       </div>
     </div>
