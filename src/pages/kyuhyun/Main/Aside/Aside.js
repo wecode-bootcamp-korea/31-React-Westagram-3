@@ -6,7 +6,11 @@ const Aside = () => {
     <aside className="mainRight">
       {/* <!-- 메인 우측 내 프로필  --> */}
       <div className="mainRightTop">
-        <img className="mainRightTopImg" src="/images/kyuhyun/my.png" />
+        <img
+          className="mainRightTopImg"
+          src="/images/kyuhyun/my.png"
+          alt="mainRigthTopImg"
+        />
         <div className="mainRightTopProfile">
           <div className="mainRightTopId">
             <span>loubxxtin</span>
@@ -30,12 +34,11 @@ const Aside = () => {
               <img
                 className="mainRightMiddleListImg"
                 src="/images/kyuhyun/profile4.png"
+                alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
                 <div className="mainRightMiddleListProfileId">
                   <span>kkk_nannya</span>
-                  {/* <!-- </div>
-              <div className="mainRight-middle-list-profile-name"> --> */}
                   <span>16분 전</span>
                 </div>
               </div>
@@ -44,12 +47,11 @@ const Aside = () => {
               <img
                 className="mainRightMiddleListImg"
                 src="/images/kyuhyun/profile5.png"
+                alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
                 <div className="mainRightMiddleListProfileId">
                   <span>ohya_0</span>
-                  {/* <!-- </div>
-              <div className="mainRight-middle-list-profile-name"> --> */}
                   <span>3시간 전</span>
                 </div>
               </div>
@@ -58,12 +60,11 @@ const Aside = () => {
               <img
                 className="mainRightMiddleListImg"
                 src="/images/kyuhyun/profile6.png"
+                alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
                 <div className="mainRightMiddleListProfileId">
                   <span>hyookyc</span>
-                  {/* <!-- </div>
-              <div className="mainRight-middle-list-profile-name"> --> */}
                   <span>20시간 전</span>
                 </div>
               </div>
@@ -72,12 +73,11 @@ const Aside = () => {
               <img
                 className="mainRightMiddleListImg"
                 src="/images/kyuhyun/profile7.png"
+                alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
                 <div className="mainRightMiddleListProfileId">
                   <span>jminkeek</span>
-                  {/* <!-- </div>
-              <div className="mainRight-middle-list-profile-name"> --> */}
                   <span>21시간 전</span>
                 </div>
               </div>
@@ -99,6 +99,7 @@ const Aside = () => {
               <img
                 className="mainRightBottomListImg"
                 src="/images/kyuhyun/mainimg.png"
+                alt="mainRightBottomListImg"
               />
               <div className="mainRightBottomListProfile">
                 <div className="mainRightBottomListProfileId">
@@ -114,6 +115,7 @@ const Aside = () => {
               <img
                 className="mainRightBottomListImg"
                 src="/images/kyuhyun/profile2.png"
+                alt="mainRightBottomListImg"
               />
               <div className="mainRightBottomListProfile">
                 <div className="mainRightBottomListProfileId">
@@ -129,6 +131,7 @@ const Aside = () => {
               <img
                 className="mainRightBottomListImg"
                 src="/images/kyuhyun/profile3.png"
+                alt="mainRightBottomListImg"
               />
               <div className="mainRightBottomListProfile">
                 <div className="mainRightBottomListProfileId">

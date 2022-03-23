@@ -1,24 +1,16 @@
 import React from 'react';
 import Comment from './Comment';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Feed = ({
   feedItem: { id, topUserImg, topUserName, mainImg, commentList },
 }) => {
   const [commentArr, setCommentArr] = useState([...commentList]);
-  // const commentArr = [...commentList];
   const [comment, setComment] = useState('');
-  // const [feedArr, setFeedArr] = useState([]);
 
   const onClick = e => {
     if (e.key === 'enter') handleInputList();
   };
-
-  // useEffect(() => {
-  //   fetch('/public/data/feedData.json')
-  //     .then(res => res.json())
-  //     .then(res => setCommentArr(res));
-  // }, []);
 
   const handleInputList = e => {
     e.preventDefault();
@@ -38,7 +30,7 @@ const Feed = ({
         <section className="articleTop">
           <div className="articleTopLeft">
             <div className="articleTopLeftImg">
-              <img src={topUserImg} />
+              <img src={topUserImg} alt="topUserImg" />
             </div>
             <h5 className="articleTopLeftText">{topUserName}</h5>
           </div>
@@ -48,7 +40,7 @@ const Feed = ({
           </div>
         </section>
         <div className="articleMiddle">
-          <img src={mainImg} alt="" />
+          <img src={mainImg} alt="mainImg" />
         </div>
 
         <footer className="articleBottom">
@@ -60,7 +52,7 @@ const Feed = ({
           </div>
           <div className="articleBottomMiddle">
             <div className="articleBottomMiddleLike">
-              <img src="/images/kyuhyun/my.png" />
+              <img src="/images/kyuhyun/my.png" alt="bottomUserImg" />
               <span className="articleBottomMiddleText">
                 loubxxtin님 외 10명이 좋아합니다.
               </span>

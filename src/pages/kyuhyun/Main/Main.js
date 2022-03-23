@@ -3,47 +3,26 @@ import { useEffect, useState } from 'react';
 import './Main.scss';
 import Aside from './Aside/Aside';
 import Nav from '../../../components/Nav/Nav';
-// import Comment from './Comment';
 import Feed from './Feed';
 
 const Main = () => {
-  // const [commentArr, setCommentArr] = useState([...commentList]);
-  // const [comment, setComment] = useState('');
   const [feedArr, setFeedArr] = useState([]);
 
-  // const onClick = e => {
-  //   if (e.key === 'enter') handleInputList();
-  // };
-
   useEffect(() => {
-    fetch('/data/feedData.json')
+    fetch('/data/kyuhyun/feedData.json')
       .then(res => res.json())
       .then(res => setFeedArr(res));
   }, []);
-
-  // useEffect(() => {
-  //   fetch('/data/commentData.json')
-  //     .then(res => res.json())
-  //     .then(res => setCommentArr(res));
-  // }, []);
-
-  // const handleInputList = e => {
-  //   e.preventDefault();
-  //   let newComment = [...commentArr];
-  //   newComment.push({
-  //     id: newComment.length + 1,
-  //     userName: 'loubxxtin',
-  //     content: comment,
-  //   });
-  //   setCommentArr(newComment);
-  //   setComment('');
-  // };
-
   return (
     <div className="Main">
+      {/* 헤더  */}
       <Nav />
+      {/* 헤더 종료 */}
+      {/* 전체페이지 시작 */}
       <main className="page">
+        {/* 메인피드, 메인우측 감싸는 부모 */}
         <div className="main">
+          {/* 메인피드 목록 시작  */}
           <div className="feeds">
             {feedArr.map(feedItem => {
               return (
@@ -132,9 +111,11 @@ const Main = () => {
               </footer>
             </article> */}
           </div>
+          {/* 메인피드 종료 */}
         </div>
         {/* 메인우측시작 */}
         <Aside />
+        {/* 메인 우측 종료  */}
       </main>
     </div>
   );

@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 
 const Login = () => {
   const navigate = useNavigate();
+  // 메인페이지 이동
   const goToMain = () => {
     navigate('/main-kyuhyun');
   };
-
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
@@ -18,14 +18,45 @@ const Login = () => {
   const handlePwInput = event => {
     setPw(event.target.value);
   };
-
-  // const isDisabled = () => {};
-
+  // 유효성 검사 - 로그인
   const isValueTrue = () => {
     id.includes('@') && pw.length > 5
       ? goToMain()
       : alert('아이디, 비밀번호를 확인하세요.');
   };
+  // fetch함수를 이용해 api 호출 - 회원가입
+  const goToSignup = () => {
+    fetch('http://10.58.3.10:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'kyuhyun',
+        email: id,
+        password: pw,
+        phone_number: '010',
+      }),
+    })
+      .then(res => res.json())
+      .then(result => alert(result.message));
+    setId('');
+    setPw('');
+  };
+  // fetch함수를 이용해 api 호출 - 로그인
+  const goToLogin = () => {
+    fetch('http://10.58.3.10:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'kyuhyun',
+        email: id,
+        password: pw,
+        phone_number: '010',
+      }),
+    })
+      .then(res => res.json())
+      .then(result => (result.token ? goToMain() : alert(result.message)));
+    setId('');
+    setPw('');
+  };
+
   return (
     <div className="Login">
       <div className="main">
@@ -54,8 +85,23 @@ const Login = () => {
           disabled={id.length <= 1 || pw.length <= 1}
           onClick={isValueTrue}
         />
+        {/* <input
+          type="button"
+          className="loginBtn"
+          value="로그인"
+          disabled={id.length <= 1 || pw.length <= 1}
+          fetch를 이용하여 api 호출하기
+          onClick={goToLogin}
+        /> */}
+        <input
+          type="button"
+          className="loginBtn2"
+          value="회원가입"
+          disabled={id.length <= 1 || pw.length <= 1}
+          onClick={goToSignup}
+        />
         <div className="lostPw">
-          <span>비밀번호를 잊으셨나요?</span>
+          <a src="/">비밀번호를 잊으셨나요?</a>
         </div>
       </div>
     </div>

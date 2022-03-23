@@ -66,6 +66,21 @@
       }
     }
     // &: #c4e0fb;
+    .loginBtn2 {
+      width: 350px;
+      height: 40px;
+      margin-top: 10px;
+      // background-color: #c4e0fb;
+      background-color: #1f83d8;
+
+      color: white;
+      border: none;
+      border-radius: 10px;
+
+      &:disabled {
+        background-color: #c4e0fb;
+      }
+    }
   }
 
   .lostPw {
