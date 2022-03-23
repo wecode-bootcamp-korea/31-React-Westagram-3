@@ -1,1 +1,105 @@
 @charset "utf-8";
+.side {
+  margin-left: 20px;
+  .sideTop {
+    display: flex;
+    margin-bottom: 10px;
+
+    img {
+      object-fit: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+    }
+
+    .sideTopRight {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+    .sideTopRight span:nth-child(2) {
+      color: #9c9c9c;
+    }
+  }
+  .sideStory {
+    border: 2px solid #c5c5c5;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    .sideStoryTop {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      padding: 20px 20px 20px 20px;
+      font-weight: bold;
+
+      span:nth-child(2) {
+        color: #c5c5c5;
+      }
+    }
+    .sideContent {
+      padding: 0 0 5px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .Item {
+        display: flex;
+        height: 43px;
+        width: 256px;
+        .Profile {
+          object-fit: cover;
+          width: 35px;
+          height: 35px;
+          border-radius: 50px;
+        }
+        .User {
+          display: flex;
+          flex-direction: column;
+          margin-left: 15px;
+          font-weight: bold;
+          .span:nth-child(2) {
+            color: #c5c5c5;
+          }
+        }
+      }
+    }
+  }
+  .sideRecommend {
+    border: 2px solid #c5c5c5;
+
+    .sideRecommendTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10px 20px 10px;
+      font-weight: bold;
+    }
+    .sideContent {
+      padding: 0 0 5px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .Item {
+        display: flex;
+        height: 43px;
+        width: 256px;
+        .Profile {
+          object-fit: cover;
+          width: 35px;
+          height: 35px;
+          border-radius: 50px;
+        }
+        .User {
+          display: flex;
+          flex-direction: column;
+          margin-left: 15px;
+          font-weight: bold;
+          .span:nth-child(2) {
+            color: #c5c5c5;
+          }
+        }
+      }
+    }
+  }
+}

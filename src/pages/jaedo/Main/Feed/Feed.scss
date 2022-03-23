@@ -1,0 +1,46 @@
+.feeds {
+  width: 613px;
+  border: 2px solid #c5c5c5;
+  background-color: #ffffff;
+
+  .articleTop {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+
+    .articleTopLeft {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 180px;
+
+      .profile {
+        object-fit: cover;
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+      }
+    }
+    .more {
+      width: 25px;
+      margin-right: 10px;
+    }
+  }
+
+  .articleContent img {
+    object-fit: contain;
+    width: 100%;
+  }
+  .commentInput {
+    border: none;
+    width: 90%;
+  }
+  .commentContents {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+  }
+}
