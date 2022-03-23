@@ -1,9 +1,36 @@
-import React from 'react';
-import FooterList from './FooterList';
-import FOOTER_DATA from './footerData';
+import React, { useState, useEffect } from 'react';
+import UpdatedStory from './UpdatedStory/UpdatedStory';
+import RecommendedUser from './RecommendedUser/RecommendedUser';
+import FooterList from './FooterList/FooterList';
+import FOOTER_DATA from './FooterList/footerData';
 import './Aside.scss';
 
 const Aside = () => {
+  const [updatedStory, setUpdatedStory] = useState([]);
+  const [recommendedUser, setRecommendedUser] = useState([]);
+
+  //스토리 업데이트된 친구 json데이터 호출
+  useEffect(() => {
+    fetch('http://localhost:3000/data/jaewoong/updatedStoryData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setUpdatedStory(data);
+      });
+  }, []);
+
+  //추천친구목록 json데이터 호출
+  useEffect(() => {
+    fetch('http://localhost:3000/data/jaewoong/recommendedUserData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setRecommendedUser(data);
+      });
+  }, []);
+
   return (
     <aside>
       <div className="userContainer">
@@ -29,50 +56,14 @@ const Aside = () => {
       </div>
       <div className="asideBox story">
         <ul>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb1.png"
+          {updatedStory.map((updatedStory, i) => (
+            <UpdatedStory
+              key={i}
+              id={updatedStory.id}
+              thumbnail={updatedStory.thumbnail}
+              timePassed={updatedStory.timePassed}
             />
-            <dl className="doubleLineContainer">
-              <dt className="no1 bold">아이디1</dt>
-              <dd className="no1 gray">3분전</dd>
-            </dl>
-          </li>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb2.png"
-            />
-            <dl className="doubleLineContainer">
-              <dt className="no1 recommandId bold">아이디2</dt>
-              <dd className="no1 friendsOfMineLocation gray">10분전</dd>
-            </dl>
-          </li>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb3.png"
-            />
-            <dl className="doubleLineContainer">
-              <dt className="no1 recommandId bold">아이디3</dt>
-              <dd className="no1 friendsOfMineLocation gray">2일전</dd>
-            </dl>
-          </li>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb4.png"
-            />
-            <dl className="doubleLineContainer">
-              <dt className="no1 recommandId bold">아이디4</dt>
-              <dd className="no1 friendsOfMineLocation gray">3일전</dd>
-            </dl>
-          </li>
+          ))}
         </ul>
       </div>
       <div className="asideBoxHeader">
@@ -81,68 +72,25 @@ const Aside = () => {
           모두보기
         </a>
       </div>
-      <div className="asideBox recommand">
+      <div className="asideBox recommend">
         <ul>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb5.png"
+          {recommendedUser.map((element, i) => (
+            <RecommendedUser
+              key={i}
+              id={element.id}
+              thumbnail={element.thumbnail}
+              followerName={element.followerName}
+              followerNum={element.followerNum}
             />
-            <dl>
-              <dt className="bold">아이디5</dt>
-              <dd className="gray">aaa외 13명이 팔로우하고있습니다.</dd>
-            </dl>
-            <span className="mainBlue">팔로우</span>
-          </li>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb6.png"
-            />
-            <dl className="doubleLineContainer">
-              <dt className="no1 recommandId bold">아이디6</dt>
-              <dd className="no1 friendsOfMineLocation gray">
-                aaa외 13명이 팔로우하고있습니다.
-              </dd>
-            </dl>
-            <span className="mainBlue">팔로우</span>
-          </li>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb1.png"
-            />
-            <dl className="doubleLineContainer">
-              <dt className="no1 recommandId bold">아이디7</dt>
-              <dd className="no1 friendsOfMineLocation gray">
-                aaa외 13명이 팔로우하고있습니다.
-              </dd>
-            </dl>
-            <span className="mainBlue">팔로우</span>
-          </li>
-          <li className="asideBoxList">
-            <img
-              className="no1 middleThumbnail"
-              alt="팔로워썸네일"
-              src="../../../../images/jaewoong/westa-userthumnails/thumb1.png"
-            />
-            <dl className="doubleLineContainer">
-              <dt className="no1 recommandId bold">아이디7</dt>
-              <dd className="no1 friendsOfMineLocation gray">
-                aaa외 13명이 팔로우하고있습니다.
-              </dd>
-            </dl>
-            <span className="mainBlue">팔로우</span>
-          </li>
+          ))}
         </ul>
       </div>
       <div className="footer">
         <ul>
-          {FOOTER_DATA.map((footer, i) => {
-            return <FooterList key={i} name={footer.name} url={footer.url} />;
+          {FOOTER_DATA.map(footer => {
+            return (
+              <FooterList key={footer.id} name={footer.name} url={footer.url} />
+            );
           })}
         </ul>
         <div>2019 WESTAGRAM</div>

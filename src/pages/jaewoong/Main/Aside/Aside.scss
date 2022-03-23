@@ -13,6 +13,9 @@ aside {
       border-radius: 90px;
     }
   }
+  dl {
+    position: inherit;
+  }
   .asideBoxHeader {
     @include flexBetween;
     padding: 10px;
@@ -46,11 +49,23 @@ aside {
   .story {
     overflow-y: auto;
   }
-  .recommand {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  .recommend {
+    ul {
+      overflow: hidden;
+      white-space: nowrap;
+      li > dl {
+        position: flex;
+        flex-direction: column;
+        dd {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          width: 140px;
+        }
+      }
+    }
   }
+
   .footer {
     ul {
       display: flex;

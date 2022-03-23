@@ -1,0 +1,22 @@
+[
+  {
+    "id": "아이디1",
+    "thumbnail": "/images/jaewoong/westa-userthumnails/thumb1.png",
+    "timePassed": "3분전"
+  },
+  {
+    "id": "아이디2",
+    "thumbnail": "/images/jaewoong/westa-userthumnails/thumb2.png",
+    "timePassed": "1시간전"
+  },
+  {
+    "id": "아이디3",
+    "thumbnail": "/images/jaewoong/westa-userthumnails/thumb3.png",
+    "timePassed": "2일전"
+  },
+  {
+    "id": "아이디4",
+    "thumbnail": "/images/jaewoong/westa-userthumnails/thumb4.png",
+    "timePassed": "1주일전"
+  }
+]

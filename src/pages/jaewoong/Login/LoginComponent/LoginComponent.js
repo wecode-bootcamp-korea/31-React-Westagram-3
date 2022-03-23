@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginComponent.scss';
 
@@ -6,6 +6,7 @@ const LoginComponent = () => {
   const [username, setUsername] = useState('');
   const [pwd, setPwd] = useState('');
   const navigate = useNavigate();
+  const API = '';
   // const [inputValidation, setInputValidation] = useState(true);
 
   const handleIdInput = e => {
@@ -22,27 +23,23 @@ const LoginComponent = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    fetch(API, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: username,
+        password: pwd,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+
     navigate('/main-jaewoong', {
       state: {
         username: username,
       },
     });
   };
-  // const checkUserValidation = () => {
-  //   const checkUsername = username => {
-  //     if (username.indexOf('@') == -1) return false;
-  //     else return true;
-  //   };
-
-  //   const checkPwd = pwd => {
-  //     if (pwd.length < 5) return false;
-  //     else return true;
-  //   };
-
-  //   checkUsername(props.username) && checkPwd(props.pwd)
-  //     ? setInputValidation(true)
-  //     : setInputValidation(false);
-  // };
 
   return (
     <form className="loginForm" onSubmit={handleSubmit}>
@@ -60,11 +57,6 @@ const LoginComponent = () => {
         autoComplete="on"
         onChange={handlePwdInput}
       />
-      {/*<Link to="/main-jaewoong">
-        <button className="loginBtn" onClick={checkValidation}>
-          Login
-        </button>
-      </Link>*/}
       <button
         className={
           username.indexOf('@') !== -1 && pwd.length > 4

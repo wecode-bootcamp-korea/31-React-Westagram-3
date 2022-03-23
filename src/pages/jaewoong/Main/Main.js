@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Aside from './Aside/Aside';
+import Feed from './Feed/Feed';
 import './Main.scss';
 import Comment from './Comment/Comment';
 
@@ -36,7 +37,13 @@ const Main = () => {
       <Nav />
       <main>
         <section>
-          <article>
+          <Feed
+            commentList={commentList}
+            content={content}
+            submitComment={submitComment}
+            contentHandler={contentHandler}
+          />
+          {/* <article>
             <div className="postHeader">
               <img
                 className="middleThumbnail"
@@ -123,7 +130,7 @@ const Main = () => {
                 <button className="submitReply">입력</button>
               </form>
             </div>
-          </article>
+          </article> */}
         </section>
         <Aside />
       </main>
