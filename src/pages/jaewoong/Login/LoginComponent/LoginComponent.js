@@ -7,7 +7,6 @@ const LoginComponent = () => {
   const [pwd, setPwd] = useState('');
   const navigate = useNavigate();
   const API = '';
-  // const [inputValidation, setInputValidation] = useState(true);
 
   const handleIdInput = e => {
     // setUsername(e.target.value);
@@ -30,15 +29,15 @@ const LoginComponent = () => {
         email: username,
         password: pwd,
       }),
-    })
-      .then(response => response.json())
-      .then(result => console.log('결과: ', result));
+    }).then(response => response.json());
 
-    navigate('/main-jaewoong', {
-      state: {
-        username: username,
-      },
-    });
+    username && pwd
+      ? navigate('/main-jaewoong', {
+          state: {
+            username: username,
+          },
+        })
+      : alert('ID와 비밀번호를 입력해주세요');
   };
 
   return (

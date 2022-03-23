@@ -22,7 +22,6 @@ const Join = props => {
     const { value } = e.target;
     setUserName(value);
   };
-
   const handleSubmit = e => {
     e.preventDefault();
     fetch('http://10.58.1.90:8000/users/signup', {

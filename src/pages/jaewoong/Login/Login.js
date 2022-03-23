@@ -15,7 +15,7 @@ const Login = () => {
       <main className="loginContainer">
         <h1 className="loginTitle">westagram</h1>
         <LoginComponent />
-        <Join />
+        <Join show={show} />
         <button onClick={handleToggle}>회원가입</button>
         <a href="" className="forgetPwd gray">
           비밀번호를 잊으셨나요?
