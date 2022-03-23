@@ -5,6 +5,7 @@ const Feed = ({ userId, userFeed, userComment, userImg }) => {
   const [comment, setComment] = useState('');
   const [isCommentBtn, setIsCommentBtn] = useState(false);
   const [commentArray, setComentArray] = useState(userComment);
+  const [FeedMore, setFeedMore] = useState(false);
 
   const commentChange = event => {
     setComment(event.target.value);
@@ -13,6 +14,9 @@ const Feed = ({ userId, userFeed, userComment, userImg }) => {
 
   const hasCommentInput = () => {
     comment.length ? setIsCommentBtn(true) : setIsCommentBtn(false);
+  };
+  const handleFeedMore = () => {
+    setFeedMore(!FeedMore);
   };
 
   const handleCommentList = event => {
@@ -66,8 +70,10 @@ const Feed = ({ userId, userFeed, userComment, userImg }) => {
         </div>
         <div className="feed-information">
           <span className="feed-id">{userId}</span>
-          <span className="feed-content">{userFeed}</span>
-          <a href="#!" className="btn-more">
+          <span className={'feed-content ' + (FeedMore ? 'more' : '')}>
+            {userFeed}
+          </span>
+          <a href="#!" className="btn-more" onClick={handleFeedMore}>
             더보기
           </a>
           <ul className="feed-comment-wrap">
