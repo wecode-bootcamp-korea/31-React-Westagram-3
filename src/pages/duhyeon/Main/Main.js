@@ -7,6 +7,7 @@ import Feed from './Feed';
 const Main = () => {
   const [feedArr, setFeedArr] = useState([]);
   useEffect(() => {
+    // fetch('http://10.59.1.189:8000/users/signup', {
     fetch('http://localhost:3000/data/commentData.json', {
       method: 'GET',
     })

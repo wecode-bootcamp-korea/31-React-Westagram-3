@@ -16,12 +16,26 @@ const Login = () => {
   let idValid =
     inputs.id.includes('@') && inputs.password.length > 4 ? true : false;
   const navigate = useNavigate();
+
   const goToMain = () => {
-    navigate('/main-duhyeon');
+    fetch('http://10.58.1.189:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: inputs.id,
+        password: inputs.password,
+      }),
+    })
+      .then(response => response.json())
+      .then(res => {
+        if (res.token) {
+          navigate('/main-duhyeon');
+        }
+      });
   };
+  //sjsdfuk@naver.coms
   return (
-    <div className="container">
-      <div className="login">
+    <div className="login">
+      <div className="container">
         <h1 className="logo">westagram</h1>
         <div className="login-form">
           <form>
@@ -38,7 +52,6 @@ const Login = () => {
               value={inputs.password}
               type="password"
               onChange={onChange}
-              onKeyDown={goToMain}
               autoComplete="off"
               placeholder="비밀번호"
             />
