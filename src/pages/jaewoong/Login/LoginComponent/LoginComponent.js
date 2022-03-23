@@ -3,50 +3,48 @@ import { useNavigate } from 'react-router-dom';
 import './LoginComponent.scss';
 
 const LoginComponent = () => {
-  const [username, setUsername] = useState('');
-  const [pwd, setPwd] = useState('');
+  const [inputs, setInputs] = useState({
+    username: '',
+    pwd: '',
+  });
   const navigate = useNavigate();
   const API = '';
 
-  const handleIdInput = e => {
-    // setUsername(e.target.value);
-    const { value } = e.target;
-    setUsername(value);
+  const handleInput = e => {
+    setInputs(inputs => ({
+      ...inputs, //기존객체 오버라이드한다는 뜻인가
+      [e.target.className]: e.target.value,
+    }));
   };
 
-  const handlePwdInput = e => {
-    // setPwd(e.target.value);
-    const { value } = e.target;
-    setPwd(value);
-  };
+  let checkValidity =
+    inputs.username.includes('@') && inputs.pwd.length > 4 ? true : false;
 
-  const handleSubmit = e => {
+  const handleLogin = e => {
     e.preventDefault();
 
     fetch(API, {
       method: 'POST',
       body: JSON.stringify({
-        email: username,
-        password: pwd,
+        email: inputs.username,
+        password: inputs.pwd,
       }),
-    }).then(response => response.json());
-
-    username && pwd
-      ? navigate('/main-jaewoong', {
-          state: {
-            username: username,
-          },
-        })
-      : alert('ID와 비밀번호를 입력해주세요');
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.token) {
+          navigate('/main-jaewoong');
+        } else alert('ID와 비밀번호를 다시 확인해주세요');
+      });
   };
-
+  //form이 아닌 button에 이벤트 걸것. e.preventDefault걸면서 submit타입 선언 불필요
   return (
-    <form className="loginForm" onSubmit={handleSubmit}>
+    <form className="loginForm">
       <input
         className="username"
         placeholder="전화번호,사용자 이름 또는 이메일"
         type="email"
-        onChange={handleIdInput}
+        onChange={handleInput}
       />
       <input
         className="pwd"
@@ -54,15 +52,12 @@ const LoginComponent = () => {
         placeholder="비밀번호"
         minLength={5}
         autoComplete="on"
-        onChange={handlePwdInput}
+        onChange={handleInput}
       />
       <button
-        className={
-          username.indexOf('@') !== -1 && pwd.length > 4
-            ? 'btnActivate'
-            : 'loginBtn'
-        }
-        type="submit"
+        className={checkValidity ? 'btnActivate' : 'loginBtn'}
+        disabled={checkValidity ? false : true}
+        onClick={handleLogin}
       >
         login
       </button>
