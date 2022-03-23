@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Join = props => {
+const Join = ({ show }) => {
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
   const [userName, setUserName] = useState('');
@@ -32,12 +32,11 @@ const Join = props => {
         name: userName,
         phone: phone,
       }),
-    })
-      .then(response => response.json())
-      .then(result => console.log('결과: ', result));
+    }).then(response => response.json());
   };
+
   return (
-    <div className={props.show ? 'modal' : 'hidden'}>
+    <div className={show ? 'modal' : 'hidden'}>
       <form className="loginForm" onSubmit={handleSubmit}>
         <input
           className="email"

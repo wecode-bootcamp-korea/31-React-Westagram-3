@@ -17,7 +17,7 @@ const Login = () => {
         <LoginComponent />
         <Join show={show} />
         <button onClick={handleToggle}>회원가입</button>
-        <a href="" className="forgetPwd gray">
+        <a href="www" className="forgetPwd gray">
           비밀번호를 잊으셨나요?
         </a>
       </main>
