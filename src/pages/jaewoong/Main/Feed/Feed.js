@@ -1,17 +1,42 @@
+import React, { useState } from 'react';
 import Comment from '../Comment/Comment';
 
-const Feed = props => {
+const Feed = ({
+  thumbnail,
+  followerThumbnail,
+  userName,
+  location,
+  photo,
+  feedText,
+  comment,
+}) => {
+  const USERNAME = 'jayYoon';
+  const [commentList, setCommentList] = useState([]);
+  const [content, setContent] = useState('');
+
+  const submitComment = e => {
+    e.preventDefault();
+    let arr = commentList;
+    arr.push({
+      userName: USERNAME,
+      content: content,
+      isLiked: false,
+    });
+    setCommentList(arr);
+    setContent('');
+  };
+
+  const contentHandler = e => {
+    setContent(e.target.value);
+  };
+
   return (
     <article>
       <div className="postHeader">
-        <img
-          className="middleThumbnail"
-          alt="팔로워 썸네일"
-          src="../../../../images/jaewoong/westa-contents/first-contents.png"
-        />
+        <img className="middleThumbnail" alt="팔로워 썸네일" src={thumbnail} />
         <dl>
-          <dt className="bold">jay yoon</dt>
-          <dd className="gray">스탠딩바 전기</dd>
+          <dt className="bold">{userName}</dt>
+          <dd className="gray">{location}</dd>
         </dl>
         <img
           className="tridotBtn"
@@ -19,11 +44,7 @@ const Feed = props => {
           src="../../../../images/jaewoong/dot_btn.png"
         />
       </div>
-      <img
-        className="photo"
-        alt="사진"
-        src="../../../../images/jaewoong/westa-contents/first-contents.png"
-      />
+      <img className="photo" alt="사진" src={photo} />
       <div className="postInteractionParts">
         <div className="postIconBar">
           <div className="postIconContainer">
@@ -58,33 +79,40 @@ const Feed = props => {
           <img
             className="smallFolloweeThumbnail"
             alt="thumbnail"
-            src="../../../../images/jaewoong/westa-userthumnails/thumb5.png"
+            src={followerThumbnail}
           />
           <span className="bold">aineworld 외 10명</span>
           <span className="small-font">이 좋아합니다.</span>
         </p>
         <dl className="postMaintext">
-          <dt className="bold">jay yoon</dt>
-          <dd>아 또가고싶다 또가면되지</dd>
+          <dt className="bold">{userName}</dt>
+          <dd>{feedText}</dd>
         </dl>
         <div className="replyContainer">
-          {props.commentList.map((element, i) => (
+          {comment.map(element => (
+            <Comment
+              key={element.id}
+              userName={element.userName}
+              content={element.content}
+              isLiked={element.isLiked}
+            />
+          ))}
+          {commentList.map((element, i) => (
             <Comment
               key={i}
-              id={i}
               userName={element.userName}
               content={element.content}
               isLiked={element.isLiked}
             />
           ))}
         </div>
-        <form className="replyComponent" onSubmit={props.submitComment}>
+        <form className="replyComponent" onSubmit={submitComment}>
           <input
             className="insertReply"
             type="text"
             placeholder="댓글 달기..."
-            value={props.content}
-            onChange={props.contentHandler}
+            value={content}
+            onChange={contentHandler}
           />
           <button className="submitReply">입력</button>
         </form>

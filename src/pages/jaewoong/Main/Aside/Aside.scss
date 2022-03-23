@@ -41,7 +41,7 @@ aside {
         &::before {
           content: ' ';
           display: inline-block;
-          width: 10px;
+          width: px;
         }
       }
     }
@@ -50,18 +50,15 @@ aside {
     overflow-y: auto;
   }
   .recommend {
-    ul {
-      overflow: hidden;
-      white-space: nowrap;
-      li > dl {
-        position: flex;
-        flex-direction: column;
-        dd {
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
-          width: 140px;
-        }
+    overflow-y: hidden;
+    white-space: nowrap;
+    ul > li > dl {
+      position: flex;
+      flex-direction: column;
+      dd {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 140px;
       }
     }
   }

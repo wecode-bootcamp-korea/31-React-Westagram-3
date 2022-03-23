@@ -2,7 +2,7 @@ import React from 'react';
 
 const RecommendedUser = ({ id, thumbnail, followerName, followerNum }) => {
   return (
-    <li>
+    <li class="asideBoxList">
       <img className="middleThumbnail" alt="팔로워썸네일" src={thumbnail} />
       <dl>
         <dt className="bold">{id}</dt>

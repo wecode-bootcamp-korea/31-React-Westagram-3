@@ -8,12 +8,12 @@ const Comment = ({ id, userName, content, isLiked }) => {
       <dd>{content}</dd>
       <dd>
         <img
-          className={isLiked ? 'show' : 'hidden'}
+          className={isLiked ? 'hidden' : 'show'}
           alt="liked"
           src="../../../../images/jaewoong/heart_logo.png"
         />
         <img
-          className={isLiked ? 'hidden' : 'show'}
+          className={isLiked ? 'show' : 'hidden'}
           alt="notLiked"
           src="../../../../images/jaewoong/redheart.png"
         />
