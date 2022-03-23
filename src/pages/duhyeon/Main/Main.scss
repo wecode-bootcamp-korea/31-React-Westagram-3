@@ -20,10 +20,6 @@
   }
 }
 
-.container {
-  background: #fafafa;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -290,214 +286,224 @@
 /* feed */
 
 .main {
-  max-width: 900px;
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-}
+  background: #fafafa;
+  .container {
+    position: relative;
+    max-width: 900px;
+    display: flex;
+    width: 100%;
+    padding-top: 120px;
+    margin: 0 auto;
 
-.feeds {
-  width: 600px;
+    .feeds {
+      width: 600px;
 
-  article {
-    border: 1px solid #e9e9e9;
+      article {
+        border: 1px solid #e9e9e9;
+        margin-bottom: 20px;
+        .feed-title {
+          background: #fff;
+          padding: 10px 15px;
 
-    .feed-title {
-      background: #fff;
-      padding: 10px 15px;
+          img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            border-radius: 25px;
+          }
 
-      img {
-        width: 25px;
-        height: 25px;
-        margin-right: 10px;
-        border-radius: 25px;
-      }
-
-      .feed-id {
-        font-weight: bold;
-      }
-
-      .btn-feed {
-        float: right;
-        font-size: 0;
-        width: 20px;
-        height: 20px;
-        background: url(../assets/images/option.png) no-repeat center;
-        background-size: 20px;
-      }
-    }
-
-    .feed-bg {
-      background: #fff;
-
-      .feed-btn-wrap {
-        padding: 5px 10px 5px 10px;
-
-        button {
-          font-size: 0;
-          width: 25px;
-          height: 25px;
-          margin-right: 5px;
-          transition: background 0.2s;
-        }
-
-        .btn-mark {
-          float: right;
-        }
-
-        .btn-like {
-          background: url(../assets/images/heart_off.png) no-repeat center
-            center;
-          background-size: 23px;
-        }
-
-        .btn-like.active {
-          background: url(../assets/images/heart_on.png) no-repeat center center;
-          background-size: 23px;
-        }
-
-        .btn-write {
-          background: url(../assets/images/chat.png) no-repeat center center;
-          background-size: 25px;
-        }
-
-        .btn-share {
-          background: url(../assets/images/upload.png) no-repeat center center;
-          background-size: 20px;
-        }
-
-        .btn-mark {
-          background: url(../assets/images/bookmark_off.png) no-repeat center
-            center;
-          background-size: 23px;
-        }
-
-        .btn-mark.active {
-          background: url(../assets/images/bookmark_on.png) no-repeat center
-            center;
-          background-size: 23px;
-        }
-      }
-
-      .like-status {
-        padding: 5px 5px 5px 15px;
-        display: flex;
-        align-items: center;
-
-        &:after {
-          content: '';
-          clear: both;
-          display: block;
-        }
-
-        img {
-          width: 18px;
-          height: 18px;
-          border-radius: 18px;
-        }
-
-        .like-count {
-          margin-left: 5px;
-
-          .bold {
+          .feed-id {
             font-weight: bold;
           }
-        }
-      }
 
-      .feed-information {
-        padding: 5px 15px;
-        border-bottom: 1px solid #e9e9e9;
-
-        .feed-id {
-          font-weight: bold;
-        }
-
-        .feed-content {
-          display: inline-block;
-          width: 150px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          vertical-align: top;
-
-          + .btn-more {
-            display: inline-block;
-            color: #aaaaaa;
+          .btn-feed {
+            float: right;
+            font-size: 0;
+            width: 20px;
+            height: 20px;
+            background: url(../assets/images/option.png) no-repeat center;
+            background-size: 20px;
           }
         }
 
-        .feed-content.more {
-          display: inline;
-          white-space: normal;
+        .feed-bg {
+          background: #fff;
 
-          + .btn-more {
-            display: none;
-          }
-        }
+          .feed-btn-wrap {
+            padding: 5px 10px 5px 10px;
 
-        .feed-comment-wrap {
-          position: relative;
-          display: flex;
-          flex-wrap: wrap;
+            button {
+              font-size: 0;
+              width: 25px;
+              height: 25px;
+              margin-right: 5px;
+              transition: background 0.2s;
+            }
 
-          .user-comment {
-            .feed-comment {
-              margin-left: 3px;
-              vertical-align: top;
+            .btn-mark {
+              float: right;
             }
 
             .btn-like {
-              position: absolute;
-              top: 0;
-              right: 0;
-              display: inline-block;
-              width: 15px;
-              height: 20px;
-              font-size: 0;
-              background: url(../assets/images/heart_off.png) no-repeat 99.9%
+              background: url(../assets/images/heart_off.png) no-repeat center
                 center;
-              background-size: 15px 15px;
-              vertical-align: top;
+              background-size: 23px;
             }
 
             .btn-like.active {
-              background: url(../assets/images/heart_on.png) no-repeat 99.9%
+              background: url(../assets/images/heart_on.png) no-repeat center
                 center;
-              background-size: 15px 15px;
+              background-size: 23px;
+            }
+
+            .btn-write {
+              background: url(../assets/images/chat.png) no-repeat center center;
+              background-size: 25px;
+            }
+
+            .btn-share {
+              background: url(../assets/images/upload.png) no-repeat center
+                center;
+              background-size: 20px;
+            }
+
+            .btn-mark {
+              background: url(../assets/images/bookmark_off.png) no-repeat
+                center center;
+              background-size: 23px;
+            }
+
+            .btn-mark.active {
+              background: url(../assets/images/bookmark_on.png) no-repeat center
+                center;
+              background-size: 23px;
             }
           }
-        }
 
-        .write-time {
-          color: #c9c9c9;
-        }
-      }
+          .like-status {
+            padding: 5px 5px 5px 15px;
+            display: flex;
+            align-items: center;
 
-      .write-comment {
-        position: relative;
+            &:after {
+              content: '';
+              clear: both;
+              display: block;
+            }
 
-        input {
-          padding: 15px;
-          width: 100%;
-          border: 0 none;
-          background: #fff;
-        }
+            img {
+              width: 18px;
+              height: 18px;
+              border-radius: 18px;
+            }
 
-        .btn-comment {
-          position: absolute;
-          right: 15px;
-          top: 0;
-          height: 50px;
-          line-height: 50px;
-          color: rgba(0, 149, 246, 0.3);
-          transition: color 0.2s;
-          cursor: initial;
-        }
+            .like-count {
+              margin-left: 5px;
 
-        .btn-comment.active {
-          color: #0095f6;
-          cursor: pointer;
+              .bold {
+                font-weight: bold;
+              }
+            }
+          }
+
+          .feed-information {
+            padding: 5px 15px;
+            border-bottom: 1px solid #e9e9e9;
+
+            .feed-id {
+              font-weight: bold;
+            }
+
+            .feed-content {
+              display: inline-block;
+              max-width: 150px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              vertical-align: top;
+
+              + .btn-more {
+                display: inline-block;
+                color: #aaaaaa;
+                margin-left: 5px;
+              }
+            }
+
+            .feed-content.more {
+              display: inline;
+              white-space: normal;
+
+              + .btn-more {
+                display: none;
+              }
+            }
+
+            .feed-comment-wrap {
+              position: relative;
+              display: flex;
+              flex-wrap: wrap;
+
+              .user-comment {
+                position: relative;
+                width: 100%;
+                .feed-comment {
+                  margin-left: 3px;
+                  vertical-align: top;
+                }
+
+                .btn-like {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  display: inline-block;
+                  width: 15px;
+                  height: 20px;
+                  font-size: 0;
+                  background: url(../assets/images/heart_off.png) no-repeat
+                    99.9% center;
+                  background-size: 15px 15px;
+                  vertical-align: top;
+                }
+
+                .btn-like.active {
+                  background: url(../assets/images/heart_on.png) no-repeat 99.9%
+                    center;
+                  background-size: 15px 15px;
+                }
+              }
+            }
+
+            .write-time {
+              color: #c9c9c9;
+            }
+          }
+
+          .write-comment {
+            position: relative;
+
+            input {
+              padding: 15px;
+              width: 100%;
+              border: 0 none;
+              background: #fff;
+            }
+
+            .btn-comment:disabled {
+              color: rgba(0, 149, 246, 0.3);
+              cursor: initial;
+            }
+
+            .btn-comment {
+              position: absolute;
+              right: 15px;
+              top: 0;
+              height: 50px;
+              line-height: 50px;
+              color: #0095f6;
+              cursor: pointer;
+              transition: color 0.2s;
+            }
+          }
         }
       }
     }
