@@ -52,7 +52,7 @@ const Nav = () => {
           <button type="button" className="btn-profile">
             프로필
           </button>
-          <ul className="profile-modal active">
+          <ul className="profile-modal">
             <li className="modal-profile">프로필</li>
             <li className="modal-save">저장됨</li>
             <li className="modal-setting">설정</li>
