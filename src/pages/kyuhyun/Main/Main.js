@@ -6,16 +6,22 @@ import Nav from '../../../components/Nav/Nav';
 import Feed from './Feed';
 
 const Main = () => {
-  const [feedArr, setFeedArr] = useState([]);
-  // FIXME: Arr 등의 네이밍은 지양
+  const [feeds, setFeeds] = useState([]);
+  // FIXME: Array, Object, Number, String, Data 접미사
 
   useEffect(() => {
     fetch('/data/kyuhyun/feedData.json')
       .then(res => res.json())
-      .then(res => setFeedArr(res));
+      .then(res => setFeeds(res));
   }, []);
 
-  // FIXME: 필요한 주석
+  const addComment = (feedID, newComment) => {
+    const newFeeds = feeds.map(feed => feed.id === feedID ? {...feed, commentList:[...feed.commentList, newComment]} : feed)
+
+    setFeeds(newFeeds)
+  }
+
+
   return (
     <div className="Main">
       {/* 헤더  */}
@@ -27,11 +33,12 @@ const Main = () => {
         <div className="main">
           {/* 메인피드 목록 시작  */}
           <div className="feeds">
-            {feedArr.map(feedItem => {
+            {feeds.map(feed => {
               return (
                 <Feed
-                  key={feedItem.id}
-                  feedItem={feedItem}
+                  key={feed.id}
+                  addComment={addComment}
+                  feedItem={feed}
 
                   // topUserName={feedItem.topUserName}
                   // mainImg={feedItem.mainImg}

@@ -2,27 +2,26 @@ import React from 'react';
 import Comment from './Comment';
 import { useState } from 'react';
 
-const Feed = ({
-  feedItem: { id, topUserImg, topUserName, mainImg, commentList },
-}) => {
+const Feed = ({feedItem, addComment}) => {
+  const { id, topUserImg, topUserName, mainImg, commentList } = feedItem
   // FIXME: 구조분해 two depth 지양
-  const [commentArr, setCommentArr] = useState([...commentList]);
-  const [comment, setComment] = useState('');
 
-  // const onClick = e => {
-  //   if (e.key === 'enter') handleInputList();
-  // };
+  // 1. 부모로부터 props를 통해 전달됩니까? 그러면 확실히 state가 아닙니다. => 유지보수
+  // 2. 시간이 지나도 변하지 않나요? 그러면 확실히 state가 아닙니다.
+  // 3. 컴포넌트 안의 다른 state나 props를 가지고 계산 가능한가요? 그렇다면 state가 아닙니다.
+
+  const [comment, setComment] = useState('');
 
   const handleInputList = e => {
     e.preventDefault();
-    let newComment = [...commentArr];
-    newComment.push({
-      id: newComment.length + 1,
+
+    const newComment = {
+      id: commentList.length + 1,
       userName: 'loubxxtin',
       content: comment,
-    });
-    // FIXME: push 사용 안해도 됨
-    setCommentArr(newComment);
+    };
+
+    addComment(feedItem.id, newComment)
     setComment('');
   };
 
@@ -63,7 +62,7 @@ const Feed = ({
           <div className="articleBottomMiddleComment">
             <div className="articleBottomMiddleCommentText">
               <ul>
-                {commentArr.map(comment => {
+                {commentList.map(comment => {
                   return (
                     <Comment
                       key={comment.id}

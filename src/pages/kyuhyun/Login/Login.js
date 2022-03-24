@@ -3,13 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
 const Login = () => {
+  // 주석? 
+  // 설명
+
+  // code를 설명(복잡했을 때) => code가 가독성이 좋게
+
+  // code 설명을 제외한 주석 활용
+  // 마킹 이부분 나중에 수정 필요
+  // TODO: ~~~~~,
+  // FIXME: ~~~~~~,
+
   const navigate = useNavigate();
-  // 메인페이지 이동
+
   const goToMain = () => {
     navigate('/main-kyuhyun');
   };
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
+
   // FIXME: input 관련 state, hanlder 합치기
 
   const handleIdInput = event => {
@@ -20,11 +31,18 @@ const Login = () => {
     setPw(event.target.value);
   };
   // 유효성 검사 - 로그인
-  const isValueTrue = () => {
-    id.includes('@') && pw.length > 5
-      ? goToMain()
-      : alert('아이디, 비밀번호를 확인하세요.');
+  const userInputValidation = () => {
+    return id.includes('@') && pw.length > 5
   };
+
+  const toastErrorMessage = () => {
+     alter()
+  }
+
+  const handleLoginBtn = () => {
+    userInputValidation() ? goToMain() : toastErrorMessage()
+  }
+  // userInput validation -> Main navigate, alter
   // FIXME: 함수 분리, 네이밍 정확하게
 
   // fetch함수를 이용해 api 호출 - 회원가입
@@ -59,6 +77,8 @@ const Login = () => {
   //   setId('');
   //   setPw('');
   // };
+  //
+  const isUserInputFilled = id.length <= 1 || pw.length <= 1
 
   return (
     <div className="Login">
@@ -85,7 +105,7 @@ const Login = () => {
           type="button"
           className="loginBtn"
           value="로그인"
-          disabled={id.length <= 1 || pw.length <= 1}
+          disabled={isUserInputFilled}
           onClick={isValueTrue}
         />
         {/* <input
@@ -100,7 +120,7 @@ const Login = () => {
           type="button"
           className="loginBtn2"
           value="회원가입"
-          disabled={id.length <= 1 || pw.length <= 1}
+          disabled={isUserInputFilled}
           onClick={goToSignup}
         />
         {/* FIXME: disable 조건 변수화 */}
