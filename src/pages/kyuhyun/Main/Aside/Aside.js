@@ -37,10 +37,8 @@ const Aside = () => {
                 alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
-                <div className="mainRightMiddleListProfileId">
-                  <span>kkk_nannya</span>
-                  <span>16분 전</span>
-                </div>
+                <span>kkk_nannya</span>
+                <span>16분 전</span>
               </div>
             </li>
             <li>
@@ -50,10 +48,8 @@ const Aside = () => {
                 alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
-                <div className="mainRightMiddleListProfileId">
-                  <span>ohya_0</span>
-                  <span>3시간 전</span>
-                </div>
+                <span>ohya_0</span>
+                <span>3시간 전</span>
               </div>
             </li>
             <li>
@@ -63,10 +59,8 @@ const Aside = () => {
                 alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
-                <div className="mainRightMiddleListProfileId">
-                  <span>hyookyc</span>
-                  <span>20시간 전</span>
-                </div>
+                <span>hyookyc</span>
+                <span>20시간 전</span>
               </div>
             </li>
             <li>
@@ -76,10 +70,8 @@ const Aside = () => {
                 alt="mainRightMiddleListImg"
               />
               <div className="mainRightMiddleListProfile">
-                <div className="mainRightMiddleListProfileId">
-                  <span>jminkeek</span>
-                  <span>21시간 전</span>
-                </div>
+                <span>jminkeek</span>
+                <span>21시간 전</span>
               </div>
             </li>
           </ul>

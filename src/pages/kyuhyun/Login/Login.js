@@ -8,19 +8,39 @@ const Login = () => {
   const goToMain = () => {
     navigate('/main-kyuhyun');
   };
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
 
-  const handleIdInput = event => {
-    setId(event.target.value);
+  // state 하나로 합치기  - 다 변경해줘야해서 잠시 접어둠 ^.^
+  // const [id, setId] = useState('');
+  // const [pw, setPw] = useState('');
+
+  const [inputValues, setInputValues] = useState({
+    inputId: '',
+    inputPw: '',
+  });
+
+  // const handleIdInput = event => {
+  //   setId(event.target.value);
+  // };
+
+  // const handlePwInput = event => {
+  //   setPw(event.target.value);
+  // };
+
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInputValues({
+      ...inputValues,
+      [name]: value,
+    });
   };
 
-  const handlePwInput = event => {
-    setPw(event.target.value);
-  };
+  // 할당한 두개의 input에 값 하나라도 1이하면 Disabled
+  const isDisabled =
+    inputValues.inputId.length <= 1 || inputValues.inputPw.length <= 1;
+
   // 유효성 검사 - 로그인
   const isValueTrue = () => {
-    id.includes('@') && pw.length > 5
+    inputValues.inputId.includes('@') && inputValues.inputPw.length > 5
       ? goToMain()
       : alert('아이디, 비밀번호를 확인하세요.');
   };
@@ -30,15 +50,14 @@ const Login = () => {
       method: 'POST',
       body: JSON.stringify({
         name: 'kyuhyun',
-        email: id,
-        password: pw,
+        email: inputValues.inputId,
+        password: inputValues.inputPw,
         phone_number: '010',
       }),
     })
       .then(res => res.json())
       .then(result => alert(result.message));
-    setId('');
-    setPw('');
+    setInputValues('');
   };
   // fetch함수를 이용해 api 호출 - 로그인 / 현재 API 를 불러오지 않기 때문에 주석
   // const goToLogin = () => {
@@ -66,14 +85,16 @@ const Login = () => {
 
         <div className="idPw">
           <input
-            onChange={handleIdInput}
+            onChange={handleInput}
             className="id"
+            name="inputId"
             tpye="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            onChange={handlePwInput}
+            onChange={handleInput}
             className="pw"
+            name="inputPw"
             tpye="text"
             placeholder="비밀번호"
           />
@@ -82,7 +103,7 @@ const Login = () => {
           type="button"
           className="loginBtn"
           value="로그인"
-          disabled={id.length <= 1 || pw.length <= 1}
+          disabled={isDisabled}
           onClick={isValueTrue}
         />
         {/* <input
@@ -95,9 +116,9 @@ const Login = () => {
         /> */}
         <input
           type="button"
-          className="loginBtn2"
+          className="signupBtn"
           value="회원가입"
-          disabled={id.length <= 1 || pw.length <= 1}
+          disabled={isDisabled}
           onClick={goToSignup}
         />
         <div className="lostPw">
