@@ -12,8 +12,8 @@ const LoginComponent = () => {
 
   const handleInput = e => {
     setInputs(inputs => ({
-      ...inputs, //기존객체 오버라이드한다는 뜻인가
-      [e.target.className]: e.target.value,
+      ...inputs, //의 useState에서  username,pwd관리하려면, 기존 객체속성 기록한 후, 입력한 객체속성만 오버라이드 하는 형식
+      [e.target.className]: e.target.value, //e.target.className은 왜 브라켓에 들어있는지??
     }));
   };
 

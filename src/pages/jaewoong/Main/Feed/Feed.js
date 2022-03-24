@@ -11,19 +11,22 @@ const Feed = ({
   comment,
 }) => {
   const USERNAME = 'jayYoon';
-  const [commentList, setCommentList] = useState([]);
+  const [commentList, setCommentList] = useState();
   const [content, setContent] = useState('');
 
   const submitComment = e => {
     e.preventDefault();
     let arr = commentList;
     arr.push({
+      // id: arr.length + 1
+      id: arr.length + 1,
       userName: USERNAME,
       content: content,
       isLiked: false,
     });
     setCommentList(arr);
     setContent('');
+    // if문
   };
 
   const contentHandler = e => {
