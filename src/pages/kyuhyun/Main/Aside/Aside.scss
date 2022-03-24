@@ -1,1 +1,141 @@
 @charset "utf-8";
+
+.mainRight {
+  position: fixed;
+  top: 135px;
+  right: 230px;
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  margin-left: 30px;
+
+  .mainRightTop {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+
+    .mainRightTopProfile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 10px;
+    }
+
+    .mainRightTopId {
+      font-size: 20px;
+    }
+
+    .mainRightTopName {
+      font-size: 15px;
+      color: gray;
+    }
+
+    .mainRightTopImg {
+      width: 65px;
+      border-radius: 45px;
+      padding: 5px;
+    }
+  }
+
+  .mainRightMiddle {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    height: 200px;
+
+    .maineRightMiddleHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    .mainRightMiddleList {
+      height: 250px;
+      overflow: scroll;
+      flex-direction: column;
+
+      ul {
+        list-style: none;
+      }
+      li img {
+        width: 28px;
+        height: 28px;
+        border-radius: 45px;
+        margin-top: 5px;
+      }
+
+      li {
+        display: flex;
+        padding: 10px;
+        margin-left: 10px;
+      }
+    }
+
+    .mainRightMiddleListProfile {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+  }
+
+  .mainRightBottom {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+
+    .mainRightBottomHeader {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    .mainRightBottomList {
+      li img {
+        width: 28px;
+        height: 28px;
+        border-radius: 45px;
+        margin-top: 5px;
+      }
+
+      li {
+        display: flex;
+        padding: 10px;
+        margin-left: 10px;
+      }
+
+      .mainRightBottomListProfile {
+        display: flex;
+        justify-content: space-between;
+        // align-content: space-between;
+        width: 400px;
+
+        .mainRightBottomListProfileId {
+          display: flex;
+          flex-direction: column;
+          /* align-items: center; */
+          justify-content: center;
+          font-size: 13px;
+          padding: 1px;
+          margin-left: 5px;
+        }
+
+        .mainRightBottomListProfileFollow {
+          color: lightskyblue;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.mainRightUnder {
+  color: lightgray;
+  margin-top: 25px;
+  font-size: 13px;
+}
+
+.mainRightUnderText2 {
+  margin-top: 10px;
+}

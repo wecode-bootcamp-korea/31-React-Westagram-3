@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "topUserImg": "/images/kyuhyun/storyimg1.png",
+    "topUserName": "sunnyfterrain",
+    "mainImg": "/images/kyuhyun/profile2.png",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "kyuhyun",
+        "content": "응애~!"
+      },
+      {
+        "id": 2,
+        "userName": "yougghyun",
+        "content": "으으애앵."
+      },
+      {
+        "id": 3,
+        "userName": "jaedo",
+        "content": "배고팡"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "topUserImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.43.37.png",
+    "topUserName": "aeiou_",
+    "mainImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.43.37.png",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "heewqo",
+        "content": "사진 좋다아~"
+      },
+      {
+        "id": 2,
+        "userName": "chanel",
+        "content": "응애"
+      },
+      {
+        "id": 3,
+        "userName": "jddark",
+        "content": "에에엥"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "topUserImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.45.46.png",
+    "topUserName": "hixxbangga",
+    "mainImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.45.46.png",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!"
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there."
+      },
+      {
+        "id": 3,
+        "userName": "younghyun",
+        "content": "응애~"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "topUserImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.46.50.png",
+    "topUserName": "nonngejeiljoa_",
+    "mainImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.46.50.png",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!"
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there."
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "topUserImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.48.48.png",
+    "topUserName": "kkkknayana",
+    "mainImg": "/images/kyuhyun/스크린샷 2022-03-21 오후 5.48.48.png",
+    "commentList": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!"
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there."
+      },
+      {
+        "id": 3,
+        "userName": "jayPark",
+        "content": "Hey."
+      }
+    ]
+  }
+]
