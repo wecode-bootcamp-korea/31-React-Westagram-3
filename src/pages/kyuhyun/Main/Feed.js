@@ -5,6 +5,7 @@ import { useState } from 'react';
 const Feed = ({
   feedItem: { id, topUserImg, topUserName, mainImg, commentList },
 }) => {
+  // FIXME: 구조분해 two depth 지양
   const [commentArr, setCommentArr] = useState([...commentList]);
   const [comment, setComment] = useState('');
 
@@ -20,6 +21,7 @@ const Feed = ({
       userName: 'loubxxtin',
       content: comment,
     });
+    // FIXME: push 사용 안해도 됨
     setCommentArr(newComment);
     setComment('');
   };
@@ -70,6 +72,7 @@ const Feed = ({
                     />
                   );
                 })}
+                {/* FIXME: 매개변수 자리에서 구조분해 */}
               </ul>
             </div>
           </div>

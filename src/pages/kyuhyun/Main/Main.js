@@ -7,12 +7,15 @@ import Feed from './Feed';
 
 const Main = () => {
   const [feedArr, setFeedArr] = useState([]);
+  // FIXME: Arr 등의 네이밍은 지양
 
   useEffect(() => {
     fetch('/data/kyuhyun/feedData.json')
       .then(res => res.json())
       .then(res => setFeedArr(res));
   }, []);
+
+  // FIXME: 필요한 주석
   return (
     <div className="Main">
       {/* 헤더  */}

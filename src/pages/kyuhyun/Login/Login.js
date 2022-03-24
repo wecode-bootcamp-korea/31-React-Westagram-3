@@ -10,6 +10,7 @@ const Login = () => {
   };
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
+  // FIXME: input 관련 state, hanlder 합치기
 
   const handleIdInput = event => {
     setId(event.target.value);
@@ -24,6 +25,8 @@ const Login = () => {
       ? goToMain()
       : alert('아이디, 비밀번호를 확인하세요.');
   };
+  // FIXME: 함수 분리, 네이밍 정확하게
+
   // fetch함수를 이용해 api 호출 - 회원가입
   const goToSignup = () => {
     fetch('http://10.58.3.10:8000/users/signup', {
@@ -100,6 +103,7 @@ const Login = () => {
           disabled={id.length <= 1 || pw.length <= 1}
           onClick={goToSignup}
         />
+        {/* FIXME: disable 조건 변수화 */}
         <div className="lostPw">
           <span>비밀번호를 잊으셨나요?</span>
         </div>
