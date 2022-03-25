@@ -24,16 +24,6 @@ const Main = () => {
         <section>
           {feedList.map(list => (
             <Feed key={list.id} {...feedList} />
-            // <Feed
-            //   key={element.id}
-            //   thumbnail={element.thumbnail}
-            //   followerThumbnail={element.followerThumbnail}
-            //   userName={element.userName}
-            //   location={element.location}
-            //   photo={element.photo}
-            //   feedText={element.feedText}
-            //   comment={element.comment}
-            // />
           ))}
         </section>
         <Aside />
