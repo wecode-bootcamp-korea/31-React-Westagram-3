@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Join from './Join/Join';
 import './Login.scss';
-
-const SERVER_URL = 'sample';
-
 const Login = () => {
   const [userInput, setUserInput] = useState({
     id: '',
     pwd: '',
   });
   const [joinPage, setJoinPage] = useState(false);
+  const navigate = useNavigate();
 
+  const isJoinpageOpened = () => {
+    setJoinPage(!joinPage);
+  };
+
+  const SERVER_URL = 'sample';
   const handleInput = e => {
-    setUserInput(userInput => ({
+    setUserInput(() => ({
       ...userInput,
       [e.target.className]: e.target.value,
     }));
@@ -22,14 +25,35 @@ const Login = () => {
   const isUserInputValid =
     userInput.id.includes('@') && userInput.pwd.length > 4 ? true : false;
 
-  const isJoinpageOpened = () => {
-    setJoinPage(!joinPage);
+  const loginHandler = e => {
+    e.preventDefault();
+    fetch(SERVER_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: userInput.username,
+        password: userInput.pwd,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.statusCode === 404) {
+          throw new Error('Not Found');
+        } else if (response.statusCode === 200) {
+          return response.json();
+        } else {
+          throw new Error('Unexpected Http Status Code');
+        }
+      })
+      .then(result => {
+        console.log('서버에서 보낸 토큰확인되었습니다.');
+        navigate('/main-jaewoong');
+      })
+      .catch(error => {
+        console.log('에러발생');
+        navigate('/main-jaewoong');
+      });
   };
 
-  const goToMain = e => {
-    e.preventDefault();
-    Navigate('/main-jaewoong');
-  };
   return (
     <div id="loginPage">
       <main className="loginContainer">
@@ -52,7 +76,7 @@ const Login = () => {
           <button
             className={isUserInputValid ? 'btnActivate' : 'loginBtn'}
             disabled={isUserInputValid ? false : true}
-            onClick={goToMain}
+            onClick={loginHandler}
           >
             login
           </button>

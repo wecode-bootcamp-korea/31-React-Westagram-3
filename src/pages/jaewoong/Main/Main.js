@@ -8,7 +8,7 @@ const Main = () => {
   const [feedList, setFeedList] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/data/jaewoong/feedData.json', {
+    fetch('/data/jaewoong/feedData.json', {
       method: 'GET',
     })
       .then(res => res.json())
