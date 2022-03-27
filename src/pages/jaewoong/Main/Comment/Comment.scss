@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import '../../../../styles/common.scss';
+
+dl {
+  position: relative;
+  display: flex;
+  margin: 10px 0;
+
+  dt {
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+    }
+  }
+  dd > img {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 20px;
+  }
+}

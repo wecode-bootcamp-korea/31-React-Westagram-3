@@ -1,1 +1,99 @@
 @charset "utf-8";
+
+@import '../../../styles/common.scss';
+
+.mainFrame {
+  background-color: wheat;
+
+  main {
+    display: flex;
+    max-width: 900px;
+    margin: 70px auto;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 10px;
+      background-color: white;
+      border: 1px solid lightgray;
+
+      .postHeader {
+        @include flexBetween;
+        align-items: center;
+
+        dl {
+          width: 500px;
+        }
+        .tridotBtn {
+          width: 20px;
+          margin: 10px;
+        }
+      }
+      .photo {
+        width: 600px;
+        height: 600px;
+      }
+      .postInteractionParts {
+        padding: 20px;
+
+        .postIconBar {
+          @include flexBetween;
+
+          .postIcon {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px 5px 0;
+          }
+        }
+        .postMaintext {
+          display: flex;
+          margin: 10px 0;
+
+          dt {
+            margin-right: 10px;
+          }
+        }
+      }
+      .replyComponent {
+        @include flexBetween;
+        align-items: center;
+
+        .insertReply {
+          width: 90%;
+          height: 40px;
+          border: 1px solid lightgray;
+          border-radius: 5%;
+        }
+
+        .submitReply {
+          width: 9%;
+          height: 40px;
+          border: 1px solid lightgray;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.middleThumbnail {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 90px;
+}
+
+.smallFolloweeThumbnail {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 0 0;
+  border-radius: 90px;
+}

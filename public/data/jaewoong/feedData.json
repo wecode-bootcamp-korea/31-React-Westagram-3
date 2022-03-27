@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "/images/jaewoong/westa-contents/first-contents.png",
+    "userName": "jay Yoon",
+    "location": "스탠딩바 전기",
+    "photo": "/images/jaewoong/westa-contents/first-contents.png",
+    "followerThumbnail": "/images/jaewoong/westa-userthumnails/thumb5.png",
+    "feedText": "배고픔",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "wecode",
+        "content": "Welcome to world best coding bootcamp!",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "joonsikyang",
+        "content": "Hi there.",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "윤재웅",
+        "content": "Hi there.",
+        "isLiked": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "thumbnail": "/images/jaewoong/westa-contents/second-contents.png",
+    "userName": "april",
+    "location": "장소1",
+    "photo": "/images/jaewoong/westa-contents/second-contents.png",
+    "followerThumbnail": "/images/jaewoong/westa-userthumnails/thumb5.png",
+    "feedText": "아무말 아무말 ㅇㅇㅇ",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "윤재웅",
+        "content": "두번째 게시글 댓글1",
+        "isLiked": false
+      },
+      {
+        "id": 2,
+        "userName": "wecode",
+        "content": "두번째 게시글 댓글2",
+        "isLiked": true
+      },
+      {
+        "id": 3,
+        "userName": "joonsikyang",
+        "content": "두번째 게시글 댓글3",
+        "isLiked": false
+      },
+      {
+        "id": 4,
+        "userName": "jayPark",
+        "content": "두번째 게시글 댓글4",
+        "isLiked": false
+      }
+    ]
+  }
+]

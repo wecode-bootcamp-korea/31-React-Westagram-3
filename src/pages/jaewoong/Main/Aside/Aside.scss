@@ -1,1 +1,97 @@
 @charset "utf-8";
+@import '../../../../styles/common.scss';
+
+aside {
+  margin-left: 30px;
+
+  .userContainer {
+    display: flex;
+    align-items: center;
+    .myThumbnail {
+      width: 40px;
+      margin: 10px 15px 10px 0px;
+      border-radius: 90px;
+    }
+  }
+  dl {
+    position: inherit;
+  }
+  .asideBoxHeader {
+    @include flexBetween;
+    padding: 10px;
+    background-color: white;
+
+    .asideBoxSeeAllBtn {
+      color: black;
+      font-size: small;
+      font-weight: 500;
+      text-decoration: none;
+    }
+  }
+  .asideBox {
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: white;
+
+    .asideBoxList {
+      display: flex;
+      align-items: center;
+
+      span {
+        &::before {
+          content: ' ';
+          display: inline-block;
+          width: px;
+        }
+      }
+    }
+  }
+  .story {
+    overflow-y: auto;
+  }
+  .recommend {
+    overflow-y: hidden;
+    white-space: nowrap;
+    ul > li > dl {
+      position: flex;
+      flex-direction: column;
+      dd {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 140px;
+      }
+    }
+  }
+
+  .footer {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      width: 300px;
+
+      a {
+        padding: 10px;
+        color: gray;
+        text-decoration: none;
+      }
+    }
+    div {
+      color: gray;
+      padding: 10px;
+    }
+  }
+}
+.invisible {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.middleThumbnail {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 90px;
+}
