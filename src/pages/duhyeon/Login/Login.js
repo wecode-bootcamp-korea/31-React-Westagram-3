@@ -19,7 +19,7 @@ const Login = () => {
         </div>
         <p className="find-password">비밀번호를 잊으셨나요?</p>
       </div>
-    </div>
+    </div> 
   );
 };
 
