@@ -6,7 +6,7 @@ const Nav = () => {
       <div className="header-wrap">
         <div className="header-logo">
           <img src="images/common/instagram.png" alt="" />
-          <span className="logo-font">westagram</span>
+          <span className="logo-font">westagramm</span>
         </div>
         <div className="header-search">
           <input className="search-input" type="text" />
